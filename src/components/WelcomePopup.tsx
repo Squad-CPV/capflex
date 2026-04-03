@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import logoImg from "@/assets/capflex-logo.png";
+import mascotImg from "@/assets/capflex-mascot.png";
 
 const WelcomePopup = () => {
   const [visible, setVisible] = useState(false);
@@ -33,23 +34,31 @@ const WelcomePopup = () => {
           closing ? "scale-95 opacity-0" : "animate-scale-in"
         }`}
       >
-        {/* Top accent line */}
         <div className="h-1 w-full bg-primary" />
 
-        <div className="p-5 flex flex-col items-center text-center gap-4">
-          {/* Mascot */}
-          <img
-            src={logoImg}
-            alt="Capflex Logo"
-            className="w-28 h-auto brightness-0 invert"
-            width={200}
-            height={48}
-          />
+        <div className="p-5 flex flex-col items-center text-center gap-3">
+          {/* Logo + Mascot side by side */}
+          <div className="flex items-center gap-4">
+            <img
+              src={mascotImg}
+              alt="Mascote Capflex"
+              className="w-20 h-20 object-contain"
+              width={512}
+              height={512}
+            />
+            <img
+              src={logoImg}
+              alt="Capflex Logo"
+              className="h-10 brightness-0 invert"
+              width={200}
+              height={48}
+            />
+          </div>
 
           {/* Text */}
           <div className="space-y-2">
             <h2 className="text-base font-bold text-foreground">
-              Olá! Eu sou o <span className="text-primary">Capflex</span> 👋
+              Bem-vindo à <span className="text-primary">Capflex</span>!
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Especialista em <strong className="text-foreground">soluções de tamponamento industrial</strong>.
@@ -57,7 +66,6 @@ const WelcomePopup = () => {
             </p>
           </div>
 
-          {/* CTA */}
           <button
             onClick={handleClose}
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-2.5 rounded-md text-sm transition-colors"
