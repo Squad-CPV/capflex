@@ -52,8 +52,8 @@ const WelcomePopup = () => {
               Olá! Eu sou o <span className="text-primary">Capflex</span> 👋
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Especialista em <strong className="text-foreground">tampas e plugues de borracha</strong> para
-              mascaramento industrial. Protejo suas peças durante pintura, jateamento e tratamentos térmicos.
+              Especialista em <strong className="text-foreground">soluções de tamponamento industrial</strong>.
+              Tampas e plugues em látex de alta durabilidade para proteger roscas, furos e superfícies nos seus processos.
             </p>
           </div>
 
