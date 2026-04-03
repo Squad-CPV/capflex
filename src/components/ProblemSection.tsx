@@ -5,7 +5,7 @@ const legacyProblems = [
   "60+ modelos de tampas plásticas rígidas",
   "Uma tampa por diâmetro, por processo",
   "Estoque fragmentado, risco constante de falta",
-  "Falhas de vedação em ambientes agressivos",
+  "Falhas de tamponamento em ambientes agressivos",
   "Perda de peças no transporte e manuseio",
 ];
 
