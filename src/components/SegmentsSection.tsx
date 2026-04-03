@@ -32,34 +32,38 @@ export default function SegmentsSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="segmentos" className="py-24 md:py-32 bg-background industrial-section">
-      <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+    <section id="segmentos" className="py-24 md:py-32 bg-background industrial-section overflow-hidden relative">
+      <div className="absolute left-0 bottom-10 w-72 h-72 bg-[radial-gradient(circle,hsl(var(--primary)/0.12),transparent_70%)] pointer-events-none" />
+
+      <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Segmentos</div>
-        
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-12 leading-[1.05] max-w-3xl">
+
+        <h2 className={`text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-12 leading-[1.05] max-w-3xl ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}>
           Soluções de engenharia para os mercados de <span className="text-primary">maior exigência.</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-0 border border-border">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-0 md:border md:border-border">
           {segments.map((s, i) => (
             <div
               key={s.title}
-              className={`p-8 group hover:bg-surface-raised transition-colors ${
-                i < 2 ? "border-b border-border" : ""
-              } ${i % 2 === 0 ? "md:border-r border-border" : ""}`}
+              className={`p-8 border border-border md:border-0 bg-card/40 md:bg-transparent group transition-all duration-300 hover:bg-surface-raised hover:-translate-y-1 ${i < 2 ? "md:border-b border-border" : ""} ${i % 2 === 0 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={inView ? { animationDelay: `${140 + i * 120}ms` } : undefined}
             >
               <div className="flex items-start justify-between mb-6">
-                <s.icon size={28} className="text-primary" strokeWidth={1.5} />
+                <div className="w-14 h-14 border border-primary/25 rounded-full flex items-center justify-center bg-background/40 group-hover:border-primary/60 transition-colors">
+                  <s.icon size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+                </div>
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{s.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.text}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{s.text}</p>
+              <div className="mt-6 w-full h-[1px] bg-border group-hover:bg-primary/50 transition-colors" />
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <a href="#formulario" className="btn-industrial-outline">
+        <div className={`mt-12 text-center ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "620ms" } : undefined}>
+          <a href="#formulario" className="btn-industrial-outline hover-scale">
             Falar com um especialista Capflex →
           </a>
         </div>
