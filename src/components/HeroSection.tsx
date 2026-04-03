@@ -37,22 +37,22 @@ export default function HeroSection() {
           </div>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            A Capflex é uma tampa elástica de alta performance que substitui múltiplos diâmetros com um único modelo. Menos estoque, zero falhas de proteção, mais velocidade na linha.
+            Desenvolvemos soluções de tamponamento para proteger roscas, furos, conexões e superfícies críticas ao longo de fabricação, pintura, montagem, transporte e armazenagem.
           </p>
 
           <a href="#formulario" className="btn-industrial mb-12">
             Solicitar Amostra Técnica Gratuita →
           </a>
 
-          <div className="grid grid-cols-3 gap-0 border border-border max-w-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-border max-w-3xl">
             {[
-              { number: "336.106", label: "tampas fornecidas" },
-              { number: "15", label: "anos de P&D" },
-              { number: "5", label: "países atendidos" },
-            ].map((stat, i) => (
-              <div key={stat.label} className={`p-4 text-center ${i < 2 ? "border-r border-border" : ""}`}>
-                <p className="industrial-number text-xl md:text-2xl mb-1">{stat.number}</p>
-                <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">{stat.label}</p>
+              { title: "Roscas", text: "Vedação flexível para múltiplos diâmetros com ajuste preciso." },
+              { title: "Furos", text: "Proteção contra contaminação, impacto e retrabalho em linha." },
+              { title: "Conexões", text: "Tamponamento seguro para embarque, estoque e processos críticos." },
+            ].map((item, i) => (
+              <div key={item.title} className={`p-4 md:p-5 ${i < 2 ? "sm:border-r border-border" : ""}`}>
+                <p className="text-[10px] uppercase tracking-[0.15em] text-primary font-bold mb-2">{item.title}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
