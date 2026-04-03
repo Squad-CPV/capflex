@@ -1,7 +1,7 @@
 import { useInView } from "@/hooks/use-animations";
-import appManufacturing from "@/assets/app-manufacturing.jpg";
-import appTransport from "@/assets/app-transport.jpg";
-import appPainting from "@/assets/app-painting.jpg";
+import appManufacturing from "@/assets/capflex-application-manufacturing.jpg";
+import appTransport from "@/assets/capflex-application-transport.jpeg";
+import appPainting from "@/assets/capflex-application-finish.jpg";
 
 const cards = [
   {

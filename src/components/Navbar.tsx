@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import capflexLogo from "@/assets/capflex-logo.png";
 
 const navLinks = [
   { label: "Problema", href: "#problema" },
@@ -14,15 +15,9 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
-      
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center">
-            <span className="text-background font-extrabold text-sm">C</span>
-          </div>
-          <span className="text-lg font-extrabold tracking-[0.15em] uppercase text-foreground">
-            Cap<span className="text-primary">flex</span>
-          </span>
+        <a href="#" className="flex items-center gap-3">
+          <img src={capflexLogo} alt="Logo Capflex" className="h-8 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-industrial.jpg";
+import heroImg from "@/assets/capflex-hero-real.jpg";
 import { useInView } from "@/hooks/use-animations";
 
 export default function HeroSection() {
@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-end pt-16 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Linha de montagem industrial" width={1920} height={1080} className="w-full h-full object-cover" />
+        <img src={heroImg} alt="Peças industriais com tampas elásticas Capflex" width={1920} height={1080} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent" />
       </div>
