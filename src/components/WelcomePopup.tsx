@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import logoImg from "@/assets/capflex-logo.png";
 import mascotImg from "@/assets/capflex-mascot.png";
 
 const WelcomePopup = () => {
@@ -37,23 +36,13 @@ const WelcomePopup = () => {
         <div className="h-1 w-full bg-primary" />
 
         <div className="p-5 flex flex-col items-center text-center gap-3">
-          {/* Logo + Mascot side by side */}
-          <div className="flex items-center gap-4">
-            <img
-              src={mascotImg}
-              alt="Mascote Capflex"
-              className="w-20 h-20 object-contain"
-              width={512}
-              height={512}
-            />
-            <img
-              src={logoImg}
-              alt="Capflex Logo"
-              className="h-10 brightness-0 invert"
-              width={200}
-              height={48}
-            />
-          </div>
+          <img
+            src={mascotImg}
+            alt="Mascote Capflex"
+            className="w-24 h-24 object-contain"
+            width={512}
+            height={512}
+          />
 
           {/* Text */}
           <div className="space-y-2">
