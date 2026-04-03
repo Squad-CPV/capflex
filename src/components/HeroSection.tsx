@@ -26,6 +26,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.18),transparent_30%)]" />
+        <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.12),transparent_65%)] pointer-events-none blur-2xl" />
       </div>
 
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />

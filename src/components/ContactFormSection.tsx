@@ -44,7 +44,9 @@ export default function ContactFormSection() {
   const inputClass = "w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors";
 
   return (
-    <section id="formulario" className="py-24 md:py-32 bg-background industrial-section">
+    <section id="formulario" className="py-24 md:py-32 bg-background industrial-section relative overflow-hidden">
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[30rem] h-[30rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.10),transparent_65%)] pointer-events-none blur-3xl" />
+      <div className="absolute top-0 left-0 w-[25rem] h-[25rem] bg-[radial-gradient(circle,hsl(var(--primary)/0.08),transparent_65%)] pointer-events-none blur-2xl" />
       <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>

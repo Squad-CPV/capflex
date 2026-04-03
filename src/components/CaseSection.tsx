@@ -28,6 +28,7 @@ export default function CaseSection() {
   return (
     <section className="py-24 md:py-32 bg-card relative overflow-hidden">
       <div className="absolute top-12 right-8 w-56 h-56 bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.10),transparent_65%)] pointer-events-none blur-2xl" />
 
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Resultados comprovados</div>

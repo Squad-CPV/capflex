@@ -18,7 +18,9 @@ export default function AnchorNumberSection() {
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
         <span className="text-[30vw] font-extrabold text-foreground leading-none">R$1M</span>
       </div>
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[32rem] h-[32rem] bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_68%)] pointer-events-none" />
+      {/* Orange-purple gradient blur */}
+      <div className="absolute top-0 left-1/4 w-[40rem] h-[40rem] bg-[radial-gradient(circle,hsl(var(--primary)/0.18),transparent_65%)] pointer-events-none blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[35rem] h-[35rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.15),transparent_65%)] pointer-events-none blur-3xl" />
 
       <div ref={ref} className={`container relative z-10 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Impacto financeiro</div>
