@@ -55,7 +55,7 @@ export default function ContactFormSection() {
               <span className="text-primary"> seu processo.</span>
             </h2>
             
-            <div className="hazard-stripe my-6 max-w-32" />
+            <div className="w-16 h-[2px] bg-primary my-6" />
             
             <p className="text-xl text-primary font-bold mb-4">Sem custo. Sem compromisso.</p>
             
