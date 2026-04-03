@@ -12,11 +12,6 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent" />
       </div>
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
 
       <div ref={ref} className="container relative z-10 pb-20 md:pb-28 pt-32">
         <div className={`max-w-3xl transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
