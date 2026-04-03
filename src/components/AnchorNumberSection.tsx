@@ -28,7 +28,7 @@ export default function AnchorNumberSection() {
             <p className="text-lg text-foreground font-semibold mb-2">
               em economia anual de estoque e processo.
             </p>
-            <div className="hazard-stripe my-6 max-w-32" />
+            <div className="w-16 h-[2px] bg-primary my-6" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Esse é o impacto médio estimado quando indústrias de médio e grande porte substituem 60+ modelos de tampas por 5 modelos Capflex.
             </p>

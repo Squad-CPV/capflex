@@ -10,7 +10,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="bg-background">
-      <div className="hazard-stripe" />
+      <div className="h-[1px] bg-border" />
       <div className="container py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div>
