@@ -78,7 +78,7 @@ export default function ContactFormSection() {
           </div>
 
           <form onSubmit={handleSubmit} className="border border-border bg-card p-6 md:p-8 space-y-5">
-            <div className="hazard-stripe mb-2" />
+            <div className="w-full h-[2px] bg-primary mb-4" />
             
             {([
               { field: "nome" as const, label: "Nome completo", type: "text", placeholder: "Seu nome completo" },

@@ -60,17 +60,6 @@
     @apply absolute top-0 left-0 w-1 h-full bg-primary opacity-20;
   }
 
-  .hazard-stripe {
-    background: repeating-linear-gradient(
-      -45deg,
-      hsl(var(--primary)),
-      hsl(var(--primary)) 4px,
-      transparent 4px,
-      transparent 12px
-    );
-    height: 3px;
-    width: 100%;
-  }
 
   .industrial-tag {
     @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border;
