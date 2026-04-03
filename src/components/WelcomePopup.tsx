@@ -39,11 +39,11 @@ const WelcomePopup = () => {
         <div className="p-5 flex flex-col items-center text-center gap-4">
           {/* Mascot */}
           <img
-            src={mascotImg}
-            alt="Mascote Capflex"
-            className="w-24 h-24 object-contain"
-            width={512}
-            height={512}
+            src={logoImg}
+            alt="Capflex Logo"
+            className="w-28 h-auto brightness-0 invert"
+            width={200}
+            height={48}
           />
 
           {/* Text */}
