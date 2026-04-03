@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import WelcomePopup from "@/components/WelcomePopup";
 import ProblemSection from "@/components/ProblemSection";
 import AnchorNumberSection from "@/components/AnchorNumberSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -14,6 +15,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <WelcomePopup />
       <Navbar />
       <HeroSection />
       <ProblemSection />
