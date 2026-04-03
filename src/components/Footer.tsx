@@ -9,28 +9,47 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container py-12">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+    <footer className="bg-background">
+      <div className="hazard-stripe" />
+      <div className="container py-16">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div>
-            <p className="text-xl font-extrabold text-primary tracking-tight mb-2">CAPFLEX</p>
-            <p className="text-sm text-muted-foreground max-w-xs">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-primary flex items-center justify-center">
+                <span className="text-background font-extrabold text-sm">C</span>
+              </div>
+              <span className="text-lg font-extrabold tracking-[0.15em] uppercase text-foreground">
+                Cap<span className="text-primary">flex</span>
+              </span>
+            </div>
+            <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
               Engenharia de proteção para processos que não aceitam falha.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 md:gap-6">
-            {footerLinks.map((l) => (
-              <a key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {l.label}
-              </a>
-            ))}
+
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Navegação</p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {footerLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors uppercase tracking-wider font-medium"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="container py-4">
-          <p className="text-xs text-muted-foreground text-center">
-            © 2026 Capflex · Todos os direitos reservados · Política de Privacidade
+        <div className="container py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-[10px] text-muted-foreground uppercase tracking-[0.1em]">
+            © 2026 Capflex · Todos os direitos reservados
+          </p>
+          <p className="text-[10px] text-muted-foreground uppercase tracking-[0.1em]">
+            Política de Privacidade
           </p>
         </div>
       </div>

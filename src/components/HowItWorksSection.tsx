@@ -4,17 +4,20 @@ import { Zap, Shield, Layers } from "lucide-react";
 const cards = [
   {
     icon: Zap,
-    title: "ELASTICIDADE CONTROLADA",
+    number: "01",
+    title: "Elasticidade Controlada",
     text: "O polímero de alta performance se adapta ao diâmetro da peça com pressão constante — sem folga, sem vazamento, sem contaminação.",
   },
   {
     icon: Shield,
-    title: "RESISTÊNCIA EM AMBIENTES AGRESSIVOS",
+    number: "02",
+    title: "Resistência em Ambientes Agressivos",
     text: "Formulação resistente a óleos, tintas, solventes e variações térmicas. Projetada para os ambientes onde tampas plásticas comuns falham.",
   },
   {
     icon: Layers,
-    title: "COBERTURA AMPLIADA",
+    number: "03",
+    title: "Cobertura Ampliada",
     text: "Cada modelo Capflex cobre uma faixa de diâmetros. 5 modelos substituem o que hoje ocupa 60 SKUs no seu almoxarifado.",
   },
 ];
@@ -23,25 +26,37 @@ export default function HowItWorksSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="solucao" className="py-20 md:py-28 bg-background">
-      <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-12 text-center max-w-3xl mx-auto leading-tight">
-          Uma tampa. Múltiplos diâmetros. Nenhuma concessão de performance.
+    <section id="solucao" className="py-24 md:py-32 bg-background industrial-section">
+      <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className="section-label">Tecnologia</div>
+        
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 leading-[1.05] max-w-3xl">
+          Uma tampa. Múltiplos diâmetros.
+          <br />
+          <span className="text-primary">Nenhuma concessão</span> de performance.
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {cards.map((c) => (
-            <div key={c.title} className="bg-card border border-border rounded-lg p-6">
-              <c.icon size={32} className="text-primary mb-4" />
-              <h3 className="text-sm font-bold text-foreground tracking-wider mb-3">{c.title}</h3>
+        <div className="grid-line my-12" />
+
+        <div className="grid md:grid-cols-3 gap-0 border border-border">
+          {cards.map((c, i) => (
+            <div key={c.title} className={`p-8 ${i < 2 ? "md:border-r border-b md:border-b-0 border-border" : ""} group hover:bg-surface-raised transition-colors`}>
+              <div className="flex items-start justify-between mb-6">
+                <c.icon size={28} className="text-primary" strokeWidth={1.5} />
+                <span className="text-[10px] font-bold text-muted-foreground text-mono">{c.number}</span>
+              </div>
+              <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{c.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{c.text}</p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-xs text-muted-foreground max-w-2xl mx-auto">
-          Fabricadas pelo processo PMF — tecnologia proprietária com 15 anos de desenvolvimento em engenharia de polímeros industriais.
-        </p>
+        <div className="mt-8 flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary" />
+          <p className="text-xs text-muted-foreground">
+            Fabricadas pelo processo <span className="text-foreground font-bold">PMF</span> — tecnologia proprietária com 15 anos de desenvolvimento em engenharia de polímeros industriais.
+          </p>
+        </div>
       </div>
     </section>
   );
