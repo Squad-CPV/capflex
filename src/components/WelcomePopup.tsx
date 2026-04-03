@@ -59,10 +59,6 @@ const WelcomePopup = () => {
         {/* Mascot floating above the card */}
         <div className="flex justify-center -mt-16">
           <div className="relative">
-            {/* Speech bubble */}
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-lg animate-bounce z-10">
-              ⚡ Olá!
-            </div>
             <img
               src={mascotImg}
               alt="Mascote Capflex"
