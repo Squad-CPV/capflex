@@ -3,7 +3,7 @@ import { useInView } from "@/hooks/use-animations";
 const metrics = [
   { number: "15+", label: "anos de desenvolvimento" },
   { number: "100%", label: "dedicada à proteção industrial" },
-  { number: "5", label: "países atendidos" },
+  { number: "Multi", label: "aplicação em múltiplos diâmetros" },
   { number: "PMF", label: "processo proprietário" },
 ];
 
