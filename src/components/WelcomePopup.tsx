@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import logoImg from "@/assets/capflex-logo.png";
 import mascotImg from "@/assets/capflex-mascot.png";
 
 const WelcomePopup = () => {
