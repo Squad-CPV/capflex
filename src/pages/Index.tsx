@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import WelcomePopup from "@/components/WelcomePopup";
 import ProblemSection from "@/components/ProblemSection";
 import AnchorNumberSection from "@/components/AnchorNumberSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
