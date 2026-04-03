@@ -15,9 +15,9 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
-      <div className="container flex items-center justify-between h-24">
-        <a href="#" className="flex items-center gap-3">
-          <img src={capflexLogo} alt="Logo Capflex" className="h-16 md:h-20 w-auto object-contain" />
+      <div className="container flex items-center justify-between h-28">
+        <a href="#" className="flex items-center gap-3 shrink-0">
+          <img src={capflexLogo} alt="Logo Capflex" className="h-20 md:h-24 w-auto object-contain" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

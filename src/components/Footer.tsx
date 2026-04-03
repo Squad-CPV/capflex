@@ -16,8 +16,8 @@ export default function Footer() {
       <div className="container py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <img src={capflexLogo} alt="Logo Capflex" className="h-16 md:h-20 w-auto object-contain" />
+            <div className="flex items-center gap-3 mb-6">
+              <img src={capflexLogo} alt="Logo Capflex" className="h-20 md:h-24 w-auto object-contain" />
             </div>
             <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
               Engenharia de proteção para processos que não aceitam falha.
