@@ -59,10 +59,6 @@ const WelcomePopup = () => {
         {/* Mascot floating above the card */}
         <div className="flex justify-center -mt-16">
           <div className="relative">
-            {/* Speech bubble */}
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-lg animate-bounce z-10">
-              ⚡ Olá!
-            </div>
             <img
               src={mascotImg}
               alt="Mascote Capflex"
@@ -74,25 +70,27 @@ const WelcomePopup = () => {
         </div>
 
         <div className="px-6 pb-6 pt-2 flex flex-col items-center text-center gap-4">
-          {/* Text */}
+          <span className="bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full shadow">
+            Olá!
+          </span>
+
           <div className="space-y-2">
             <h2 className="text-lg font-bold text-foreground">
-              Eu sou o <span className="text-primary">Capflex</span>! ⚡
+              Eu sou o <span className="text-primary">Capflex</span>!
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Sabia que o <strong className="text-foreground">tamponamento correto</strong> pode
               reduzir em até <strong className="text-primary">70% o retrabalho</strong> nos seus
-              processos industriais? A Capflex oferece tampas e plugues em látex de alta durabilidade
-              — <strong className="text-foreground">sob medida para a sua operação</strong>.
+              processos industriais? A Capflex oferece tampas e plugues em látex de alta durabilidade,
+              <strong className="text-foreground"> sob medida para a sua operação</strong>.
             </p>
           </div>
 
-          {/* CTA buttons */}
           <button
             onClick={scrollToForm}
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-lg text-sm transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
           >
-            ⚡ Quero uma solução sob medida
+            Quero uma solução sob medida
           </button>
 
           <button
