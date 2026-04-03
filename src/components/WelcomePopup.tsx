@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import mascotImg from "@/assets/capflex-mascot.png";
+import logoImg from "@/assets/capflex-logo.png";
 
 const WelcomePopup = () => {
   const [visible, setVisible] = useState(false);
