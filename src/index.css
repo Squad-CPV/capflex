@@ -23,7 +23,7 @@
     --border: 240 4% 16%;
     --input: 240 4% 16%;
     --ring: 25 95% 53%;
-    --radius: 0.5rem;
+    --radius: 0px;
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 25 95% 53%;
@@ -32,6 +32,9 @@
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 240 4% 16%;
     --sidebar-ring: 25 95% 53%;
+    
+    --surface-raised: 0 0% 7%;
+    --hazard: 45 100% 50%;
   }
 }
 
@@ -40,17 +43,96 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   html {
     scroll-behavior: smooth;
   }
 }
 
+@layer components {
+  .industrial-section {
+    @apply relative;
+  }
+  .industrial-section::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full bg-primary opacity-20;
+  }
+
+  .hazard-stripe {
+    background: repeating-linear-gradient(
+      -45deg,
+      hsl(var(--primary)),
+      hsl(var(--primary)) 4px,
+      transparent 4px,
+      transparent 12px
+    );
+    height: 3px;
+    width: 100%;
+  }
+
+  .industrial-tag {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border;
+    border-color: hsl(var(--primary) / 0.4);
+    color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.08);
+  }
+
+  .industrial-card {
+    @apply relative border border-border bg-card overflow-hidden;
+  }
+  .industrial-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-[2px] bg-primary opacity-0 transition-opacity duration-300;
+  }
+  .industrial-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .industrial-number {
+    @apply text-primary font-extrabold leading-none;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-6;
+  }
+  .section-label::before {
+    content: '';
+    @apply w-8 h-[1px] bg-primary;
+  }
+
+  .btn-industrial {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-background text-sm font-extrabold uppercase tracking-wider transition-all duration-200;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+  .btn-industrial:hover {
+    @apply opacity-90;
+    transform: translateY(-1px);
+  }
+
+  .btn-industrial-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary text-sm font-bold uppercase tracking-wider transition-all duration-200;
+  }
+  .btn-industrial-outline:hover {
+    @apply bg-primary text-background;
+  }
+
+  .grid-line {
+    @apply h-[1px] w-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+  }
+
+  .stat-block {
+    @apply relative pl-4 border-l-2 border-primary;
+  }
+}
+
 @layer utilities {
   .animate-fade-up {
-    animation: fadeUp 0.6s ease-out both;
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   .animation-delay-200 {
     animation-delay: 200ms;
@@ -58,15 +140,27 @@
   .animation-delay-400 {
     animation-delay: 400ms;
   }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .text-mono {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+  }
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes countPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }

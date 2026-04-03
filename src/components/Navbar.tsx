@@ -13,39 +13,58 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
+      <div className="hazard-stripe" />
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="text-xl font-extrabold text-primary tracking-tight">
-          CAPFLEX
+        <a href="#" className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-primary flex items-center justify-center">
+            <span className="text-background font-extrabold text-sm">C</span>
+          </div>
+          <span className="text-lg font-extrabold tracking-[0.15em] uppercase text-foreground">
+            Cap<span className="text-primary">flex</span>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors"
+            >
               {l.label}
             </a>
           ))}
         </div>
 
-        <a href="#formulario" className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground text-sm font-bold rounded-md hover:opacity-90 transition-opacity">
-          Solicitar Amostra Grátis →
+        <a
+          href="#formulario"
+          className="hidden md:inline-flex btn-industrial text-xs py-2.5 px-5"
+        >
+          Solicitar Amostra →
         </a>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground" aria-label="Menu">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+      <div className="h-[1px] bg-border" />
 
       {open && (
-        <div className="md:hidden bg-background border-t border-border pb-4">
+        <div className="md:hidden bg-background border-b border-border">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block px-6 py-3 text-sm text-muted-foreground hover:text-foreground">
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="block px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-primary hover:bg-card transition-colors"
+            >
               {l.label}
             </a>
           ))}
-          <div className="px-6 pt-2">
-            <a href="#formulario" onClick={() => setOpen(false)} className="block text-center px-5 py-2.5 bg-primary text-primary-foreground text-sm font-bold rounded-md">
-              Solicitar Amostra Grátis →
+          <div className="p-4">
+            <a href="#formulario" onClick={() => setOpen(false)} className="btn-industrial w-full text-xs py-3">
+              Solicitar Amostra →
             </a>
           </div>
         </div>

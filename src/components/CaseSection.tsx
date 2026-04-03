@@ -4,17 +4,20 @@ import { PackageCheck, Timer, Leaf } from "lucide-react";
 const results = [
   {
     icon: PackageCheck,
-    title: "FIM DA PERDA DE ESTOQUE",
+    number: "01",
+    title: "Fim da Perda de Estoque",
     text: "Redução drástica de SKUs de tampas no almoxarifado. Menos ruptura, menos compra emergencial, menos espaço ocupado.",
   },
   {
     icon: Timer,
-    title: "MICRO PARADA ZERO (LEAN MFG)",
+    number: "02",
+    title: "Micro Parada Zero (Lean Mfg)",
     text: "A tampa certa sempre disponível. Sem linha parada por falta de modelo específico. Compatível com sistemas Kanban e just-in-time.",
   },
   {
     icon: Leaf,
-    title: "PRODUÇÃO SUSTENTÁVEL",
+    number: "03",
+    title: "Produção Sustentável",
     text: "Menor volume de tampas descartadas por incompatibilidade. Processo PMF com menor geração de resíduos plásticos por unidade produzida.",
   },
 ];
@@ -23,25 +26,38 @@ export default function CaseSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-20 md:py-28 bg-card">
-      <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-12 text-center max-w-3xl mx-auto leading-tight">
-          O que muda quando uma grande montadora substitui 60 modelos por 5.
+    <section className="py-24 md:py-32 bg-card relative">
+      <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className="section-label">Resultados comprovados</div>
+        
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 leading-[1.05] max-w-3xl">
+          O que muda quando uma grande montadora substitui <span className="text-primary">60 modelos por 5.</span>
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid-line my-12" />
+
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           {results.map((r) => (
-            <div key={r.title} className="text-center">
-              <r.icon size={36} className="text-primary mx-auto mb-4" />
-              <h3 className="text-sm font-bold text-foreground tracking-wider mb-3">{r.title}</h3>
+            <div key={r.title} className="stat-block">
+              <div className="flex items-start justify-between mb-4">
+                <r.icon size={24} className="text-primary" strokeWidth={1.5} />
+                <span className="text-[10px] font-bold text-muted-foreground text-mono">{r.number}</span>
+              </div>
+              <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{r.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{r.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="text-center text-sm text-muted-foreground space-y-1">
-          <p>Aplicado nas maiores linhas de montagem do Brasil.</p>
-          <p>Disponível para auditoria técnica do processo.</p>
+        <div className="grid-line mb-8" />
+
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary" />
+          <div className="text-xs text-muted-foreground">
+            <span>Aplicado nas maiores linhas de montagem do Brasil.</span>
+            <span className="mx-2 text-border">|</span>
+            <span>Disponível para auditoria técnica do processo.</span>
+          </div>
         </div>
       </div>
     </section>
