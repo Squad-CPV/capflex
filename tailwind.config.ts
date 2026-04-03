@@ -76,10 +76,16 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "mascot-bounce": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "25%": { transform: "translateY(-6px) rotate(-2deg)" },
+          "75%": { transform: "translateY(-3px) rotate(2deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "mascot-bounce": "mascot-bounce 2s ease-in-out infinite",
       },
     },
   },
