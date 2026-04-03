@@ -39,7 +39,7 @@ const WelcomePopup = () => {
           <img
             src={mascotImg}
             alt="Mascote Capflex"
-            className="w-24 h-24 object-contain"
+            className="w-36 h-36 object-contain"
             width={512}
             height={512}
           />
