@@ -1,3 +1,5 @@
+import capflexLogo from "@/assets/capflex-logo.png";
+
 const footerLinks = [
   { label: "Problema", href: "#problema" },
   { label: "Solução", href: "#solucao" },
@@ -14,13 +16,8 @@ export default function Footer() {
       <div className="container py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center">
-                <span className="text-background font-extrabold text-sm">C</span>
-              </div>
-              <span className="text-lg font-extrabold tracking-[0.15em] uppercase text-foreground">
-                Cap<span className="text-primary">flex</span>
-              </span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={capflexLogo} alt="Logo Capflex" className="h-10 w-auto" />
             </div>
             <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
               Engenharia de proteção para processos que não aceitam falha.
