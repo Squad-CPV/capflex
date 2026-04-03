@@ -15,7 +15,7 @@ const cards = [
     img: appTransport,
     number: "02",
     title: "Transporte e Armazenagem",
-    text: "Vedação que permanece íntegra mesmo em condições de vibração, empilhamento e variação de temperatura durante o embarque.",
+    text: "Tamponamento que permanece íntegro mesmo em condições de vibração, empilhamento e variação de temperatura durante o embarque.",
     objectPosition: "center 45%",
   },
   {

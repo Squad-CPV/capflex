@@ -4,7 +4,7 @@ import { useInView } from "@/hooks/use-animations";
 const solutionHighlights = [
   {
     title: "Roscas",
-    text: "Vedação flexível para múltiplos diâmetros com ajuste preciso.",
+    text: "Tamponamento flexível para múltiplos diâmetros com ajuste preciso.",
   },
   {
     title: "Furos",
