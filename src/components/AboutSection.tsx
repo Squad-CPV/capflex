@@ -32,7 +32,7 @@ export default function AboutSection() {
                 15 anos de desenvolvimento em engenharia de polímeros resultaram em um produto que não existe no formato de prateleira. A Capflex é construída para processos que não aceitam falha.
               </p>
               <p>
-                100% focada em proteção industrial. Presente em 5 países. Com histórico documentado de aplicação nas maiores plantas industriais do Brasil.
+                100% focada em proteção industrial, com histórico documentado de aplicação em processos críticos e nas maiores plantas industriais do Brasil.
               </p>
             </div>
           </div>
