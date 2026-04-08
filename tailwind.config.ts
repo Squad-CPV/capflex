@@ -48,7 +48,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "surface-raised": "hsl(var(--surface-raised))",
+        "surface-light": "hsl(var(--surface-light))",
         "brand-purple": "hsl(var(--brand-purple))",
+        "accent-economy": "hsl(var(--accent-economy))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
