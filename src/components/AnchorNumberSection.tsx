@@ -15,9 +15,6 @@ export default function AnchorNumberSection() {
 
   return (
     <section className="py-24 md:py-32 section-white relative overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
-        <span className="text-[30vw] font-extrabold text-foreground leading-none">R$1M</span>
-      </div>
 
       <div ref={ref} className={`container relative z-10 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Impacto financeiro</div>
