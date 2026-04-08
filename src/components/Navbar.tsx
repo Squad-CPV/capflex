@@ -14,7 +14,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-[12px] border-b border-[rgba(255,255,255,0.06)]">
       <div className="container flex items-center justify-between h-20 md:h-28">
         <a href="#" className="flex items-center gap-3 shrink-0">
           <img src={capflexLogo} alt="Logo Capflex" className="h-10 sm:h-12 md:h-24 w-auto max-w-[180px] md:max-w-none object-contain brightness-0 invert" />
@@ -43,10 +43,9 @@ export default function Navbar() {
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      <div className="h-[1px] bg-border" />
 
       {open && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="md:hidden bg-background border-b border-[rgba(255,255,255,0.06)]">
           {navLinks.map((l) => (
             <a
               key={l.href}

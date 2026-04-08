@@ -25,10 +25,10 @@ export default function HeroSection() {
         <img src={heroImg} alt="Peças industriais com tampas elásticas Capflex" width={1920} height={1080} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--brand-purple)/0.12),transparent_30%)]" />
-        <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.10),transparent_65%)] pointer-events-none blur-2xl" />
       </div>
 
+      {/* Grid pattern sutil */}
+      <div className="absolute inset-0 hero-grid-pattern pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
 
       <div ref={ref} className="container relative z-10 pb-12 md:pb-28">
@@ -56,13 +56,13 @@ export default function HeroSection() {
             style={inView ? { animationDelay: "220ms" } : undefined}
           >
             <span className="industrial-number text-5xl md:text-8xl">5.</span>
-            <span className="text-lg md:text-2xl text-muted-foreground font-medium">
+            <span className="text-lg md:text-2xl text-foreground/60 font-light">
               É tudo o que você precisa.
             </span>
           </div>
 
           <p
-            className={`text-sm md:text-lg text-muted-foreground max-w-2xl mb-7 md:mb-10 leading-relaxed ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+            className={`text-[15px] md:text-lg text-foreground/60 font-light max-w-2xl mb-7 md:mb-10 leading-[1.65] ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
             style={inView ? { animationDelay: "320ms" } : undefined}
           >
             Desenvolvemos soluções de tamponamento para proteger roscas, furos, conexões e superfícies críticas ao longo de fabricação,
@@ -76,7 +76,7 @@ export default function HeroSection() {
             <a href="#formulario" className="btn-industrial hover-scale text-center text-sm md:text-base">
               Solicitar Amostra Técnica Gratuita →
             </a>
-            <div className="text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-muted-foreground border border-border px-4 py-3 bg-background/40 backdrop-blur-sm text-center sm:text-left">
+            <div className="text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-muted-foreground border border-[rgba(255,255,255,0.08)] px-4 py-3 bg-background/40 backdrop-blur-sm text-center sm:text-left">
               Diagnóstico técnico e seleção de modelos sem custo
             </div>
           </div>
@@ -85,11 +85,11 @@ export default function HeroSection() {
             {solutionHighlights.map((item, i) => (
               <div
                 key={item.title}
-                className={`border border-border bg-background/40 backdrop-blur-sm p-4 md:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/50 hover:bg-background/55 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+                className={`border border-[rgba(255,255,255,0.06)] bg-background/40 backdrop-blur-sm p-4 md:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/50 hover:bg-background/55 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
                 style={inView ? { animationDelay: `${520 + i * 120}ms` } : undefined}
               >
                 <p className="text-[10px] uppercase tracking-[0.15em] text-accent-economy font-bold mb-1.5 md:mb-2">{item.title}</p>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                <p className="text-xs md:text-sm text-foreground/60 font-light leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>

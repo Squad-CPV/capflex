@@ -56,13 +56,14 @@ export default function ApplicationsSection() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: c.objectPosition }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-[rgba(13,17,23,0.75)] group-hover:bg-[rgba(13,17,23,0.85)] transition-all duration-300" />
+                <div className="absolute inset-0 flex flex-col justify-end p-5">
+                  <span className="text-[11px] font-bold text-primary font-mono block mb-2">{c.number}</span>
+                  <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-[#F0F4F8]">{c.title}</h3>
+                </div>
               </div>
 
               <div className="space-y-3">
-                <span className="text-[11px] font-bold text-accent-economy font-mono block">{c.number}</span>
-                <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground">{c.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{c.text}</p>
               </div>
 

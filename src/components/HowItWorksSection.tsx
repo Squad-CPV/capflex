@@ -12,7 +12,7 @@ const cards = [
     icon: Shield,
     number: "02",
     title: "Resistência em Ambientes Agressivos",
-    text: "Formulação resistente a óleos, tintas, solventes e variações térmicas. Projetada para os ambientes onde tampas plásticas comuns falham.",
+    text: "Formulação resistente a óleos, solventes, tintas e variações térmicas. Projetada para os ambientes onde tampas plásticas comuns falham.",
   },
   {
     icon: Layers,
@@ -26,9 +26,7 @@ export default function HowItWorksSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="solucao" className="py-24 md:py-32 bg-background industrial-section overflow-hidden">
-      <div className="absolute left-0 top-24 w-64 h-64 bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.08),transparent_68%)] pointer-events-none" />
-
+    <section id="solucao" className="py-24 md:py-32 bg-card industrial-section overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Tecnologia</div>
 
@@ -44,13 +42,15 @@ export default function HowItWorksSection() {
           {cards.map((c, i) => (
             <div
               key={c.title}
-              className={`relative p-8 border border-border md:border-0 bg-card/60 md:bg-transparent group transition-all duration-300 hover:-translate-y-2 hover:bg-surface-raised ${i < 2 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              className={`relative p-8 border border-border md:border-0 group transition-all duration-300 hover:-translate-y-2 hover:bg-[rgba(255,255,255,0.05)] ${i < 2 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
               style={inView ? { animationDelay: `${220 + i * 140}ms` } : undefined}
             >
+              {/* Primeiro card com borda vermelha */}
+              {i === 0 && <div className="absolute inset-x-0 top-0 h-[2px] bg-primary" />}
               <div className="absolute inset-x-8 top-0 h-[2px] bg-accent-economy origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 border border-accent-economy/25 rounded-full flex items-center justify-center bg-background/50 group-hover:border-accent-economy/50 transition-colors">
-                  <c.icon size={28} className="text-accent-economy group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                  <c.icon size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{c.number}</span>
               </div>
