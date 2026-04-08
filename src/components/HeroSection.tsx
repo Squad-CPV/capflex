@@ -23,10 +23,10 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-end pt-16 md:pt-20 overflow-hidden section-dark">
       <div className="absolute inset-0">
         <img src={heroImg} alt="Peças industriais com tampas elásticas Capflex" width={1920} height={1080} className="w-full h-full object-cover" style={{ objectPosition: "center left 20%" }} />
-        {/* Extra gradient to hide text on right side of photo */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(35,39,80,0.95) 0%, rgba(35,39,80,0.0) 40%)" }} />
-        {/* Main overlay — azul-noite, NOT lilás */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.90) 0%, rgba(35,39,80,0.68) 45%, rgba(35,39,80,0.78) 100%)" }} />
+        {/* Gradiente lateral para ocultar textos da foto */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(35,39,80,0.92) 0%, transparent 45%)" }} />
+        {/* Overlay principal — mais leve para foto aparecer */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.78) 0%, rgba(35,39,80,0.50) 45%, rgba(35,39,80,0.62) 100%)" }} />
       </div>
 
       <div ref={ref} className="container relative z-10 pb-12 md:pb-28">
