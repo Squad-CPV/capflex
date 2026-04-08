@@ -37,8 +37,15 @@ export default function Footer() {
                   {l.label}
                 </a>
               ))}
-            </div>
           </div>
+
+          <div className="flex items-center gap-2 px-3 py-2 border border-accent-economy/30 bg-accent-economy/5">
+            <Leaf size={14} className="text-accent-economy shrink-0" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-accent-economy">
+              Compromisso ESG — Menor descarte plástico por unidade produzida
+            </span>
+          </div>
+        </div>
         </div>
       </div>
       <div className="border-t border-border">
