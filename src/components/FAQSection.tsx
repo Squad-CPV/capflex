@@ -30,7 +30,7 @@ export default function FAQSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-24 md:py-32 section-light overflow-hidden relative">
+    <section className="py-24 md:py-32 section-white overflow-hidden relative">
       <div ref={ref} className={`container max-w-4xl relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">FAQ</div>
 

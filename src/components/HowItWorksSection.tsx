@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="solucao" className="py-24 md:py-32 section-light overflow-hidden">
+    <section id="solucao" className="py-24 md:py-32 section-white overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Tecnologia</div>
 
