@@ -26,7 +26,7 @@ export default function HeroSection() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.88) 0%, rgba(35,39,80,0.65) 50%, rgba(35,39,80,0.80) 100%)" }} />
       </div>
 
-      <div className="absolute inset-0 hero-grid-pattern pointer-events-none" />
+      
 
       <div ref={ref} className="container relative z-10 pb-12 md:pb-28">
         <div className="max-w-4xl">
