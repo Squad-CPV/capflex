@@ -1,4 +1,5 @@
 import { useInView } from "@/hooks/use-animations";
+import { Leaf } from "lucide-react";
 
 const metrics = [
   { number: "15+", label: "anos de desenvolvimento" },
@@ -11,9 +12,7 @@ export default function AboutSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="sobre" className="py-24 md:py-32 bg-background industrial-section overflow-hidden relative">
-      <div className="absolute right-0 bottom-0 w-80 h-80 bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.07),transparent_72%)] pointer-events-none" />
-
+    <section id="sobre" className="py-24 md:py-32 bg-card industrial-section overflow-hidden relative">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Sobre</div>
 
@@ -25,17 +24,34 @@ export default function AboutSection() {
             </h2>
           </div>
 
-          <div className={`border border-border bg-card/40 backdrop-blur-sm p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/35 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "160ms" } : undefined}>
-            <div className="text-sm text-muted-foreground leading-relaxed space-y-4">
-              <p>
-                A Capflex não surgiu de um catálogo. Surgiu de um problema real: a indústria de alta exigência precisava de proteção confiável para múltiplos diâmetros — e nenhuma solução do mercado resolvia isso com eficiência.
+          <div className="space-y-6">
+            <div className={`border border-border bg-[rgba(255,255,255,0.04)] backdrop-blur-sm p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/35 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "160ms" } : undefined}>
+              <div className="text-sm text-muted-foreground leading-[1.65] space-y-4">
+                <p>
+                  A Capflex não surgiu de um catálogo. Surgiu de um problema real: a indústria de alta exigência precisava de proteção confiável para múltiplos diâmetros — e nenhuma solução do mercado resolvia isso com eficiência.
+                </p>
+                <p>
+                  15 anos de desenvolvimento em engenharia de polímeros resultaram em um produto que não existe no formato de prateleira. A Capflex é construída para processos que não aceitam falha.
+                </p>
+                <p>
+                  100% focada em proteção industrial, com histórico documentado de aplicação em processos críticos e nas maiores plantas industriais do Brasil.
+                </p>
+              </div>
+            </div>
+
+            {/* PMF Box */}
+            <div className={`pl-4 border-l-[3px] border-accent-economy bg-accent-economy/10 p-4 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "280ms" } : undefined}>
+              <p className="text-foreground font-bold text-sm">
+                Processo <span className="text-primary">PMF</span> — tecnologia proprietária de fabricação de polímeros de alta performance.
               </p>
-              <p>
-                15 anos de desenvolvimento em engenharia de polímeros resultaram em um produto que não existe no formato de prateleira. A Capflex é construída para processos que não aceitam falha.
-              </p>
-              <p>
-                100% focada em proteção industrial, com histórico documentado de aplicação em processos críticos e nas maiores plantas industriais do Brasil.
-              </p>
+            </div>
+
+            {/* Badge ESG */}
+            <div className={`flex items-center gap-2 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "360ms" } : undefined}>
+              <Leaf size={14} className="text-accent-economy shrink-0" />
+              <span className="text-[11px] font-bold text-accent-economy">
+                Compromisso ESG — Menor descarte plástico por unidade produzida
+              </span>
             </div>
           </div>
         </div>
@@ -44,10 +60,10 @@ export default function AboutSection() {
           {metrics.map((m, i) => (
             <div
               key={m.label}
-              className={`p-6 text-center border border-border md:border-0 bg-card/40 md:bg-transparent transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/30 ${i < 3 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={inView ? { animationDelay: `${280 + i * 120}ms` } : undefined}
+              className={`p-6 text-center border border-border md:border-0 bg-[rgba(255,255,255,0.04)] md:bg-transparent transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/30 ${i < 3 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={inView ? { animationDelay: `${400 + i * 120}ms` } : undefined}
             >
-              <p className="economy-number text-3xl md:text-4xl mb-2">{m.number}</p>
+              <p className="text-foreground text-3xl md:text-4xl font-extrabold mb-2">{m.number}</p>
               <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">{m.label}</p>
             </div>
           ))}

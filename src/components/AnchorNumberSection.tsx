@@ -14,13 +14,10 @@ export default function AnchorNumberSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-24 md:py-32 bg-card relative overflow-hidden">
+    <section className="py-24 md:py-32 section-white relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
         <span className="text-[30vw] font-extrabold text-foreground leading-none">R$1M</span>
       </div>
-      {/* Teal economy glow */}
-      <div className="absolute top-0 left-1/4 w-[40rem] h-[40rem] bg-[radial-gradient(circle,hsl(var(--accent-economy)/0.15),transparent_65%)] pointer-events-none blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[35rem] h-[35rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.10),transparent_65%)] pointer-events-none blur-3xl" />
 
       <div ref={ref} className={`container relative z-10 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Impacto financeiro</div>
@@ -29,13 +26,14 @@ export default function AnchorNumberSection() {
           <div className="relative">
             <div
               ref={countRef}
-              className={`border border-border bg-background/40 backdrop-blur-sm p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/35 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              className={`border border-border bg-card p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/35 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
             >
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">
                 Economia anual estimada
               </p>
-              <p className="economy-number text-5xl md:text-7xl lg:text-8xl mb-2">
-                R$ {count.toLocaleString("pt-BR")}
+              <p className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none mb-2">
+                <span className="text-primary">R$ </span>
+                <span className="text-foreground">{count.toLocaleString("pt-BR")}</span>
               </p>
               <p className="text-lg text-foreground font-semibold mb-2">
                 em economia anual de estoque e processo.
@@ -58,7 +56,7 @@ export default function AnchorNumberSection() {
                   className={`flex items-start gap-4 text-sm text-muted-foreground group border-b border-border/60 pb-4 transition-all duration-300 hover:border-accent-economy/40 hover:translate-x-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
                   style={inView ? { animationDelay: `${220 + i * 90}ms` } : undefined}
                 >
-                  <span className="text-[10px] font-bold text-accent-economy mt-0.5 text-mono w-5 shrink-0">
+                  <span className="text-[10px] font-bold text-primary mt-0.5 text-mono w-5 shrink-0">
                     0{i + 1}
                   </span>
                   <span className="group-hover:text-foreground transition-colors">{item}</span>
@@ -66,7 +64,7 @@ export default function AnchorNumberSection() {
               ))}
             </ul>
 
-            <div className={`pl-4 border-l-2 border-accent-economy mb-8 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "620ms" } : undefined}>
+            <div className={`pl-4 border-l-[3px] border-accent-economy bg-card p-4 mb-8 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "620ms" } : undefined}>
               <p className="text-foreground font-bold text-sm">
                 Não é sobre o preço da tampa. É sobre o que a tampa errada custa.
               </p>

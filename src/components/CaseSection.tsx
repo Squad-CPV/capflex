@@ -26,10 +26,7 @@ export default function CaseSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-24 md:py-32 bg-card relative overflow-hidden">
-      <div className="absolute top-12 right-8 w-56 h-56 bg-[radial-gradient(circle,hsl(var(--accent-economy)/0.12),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.08),transparent_65%)] pointer-events-none blur-2xl" />
-
+    <section className="py-24 md:py-32 section-white relative overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Resultados comprovados</div>
 
@@ -43,12 +40,12 @@ export default function CaseSection() {
           {results.map((r, i) => (
             <div
               key={r.title}
-              className={`stat-block border border-border bg-background/35 backdrop-blur-sm p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/40 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              className={`stat-block bg-card p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent-economy/40 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
               style={inView ? { animationDelay: `${240 + i * 140}ms` } : undefined}
             >
               <div className="flex items-start justify-between mb-4">
                 <r.icon size={24} className="text-accent-economy" strokeWidth={1.5} />
-                <span className="text-[10px] font-bold text-muted-foreground text-mono">{r.number}</span>
+                <span className="text-[10px] font-bold text-primary text-mono">{r.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{r.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{r.text}</p>

@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -49,8 +50,11 @@ export default {
         },
         "surface-raised": "hsl(var(--surface-raised))",
         "surface-light": "hsl(var(--surface-light))",
-        "brand-purple": "hsl(var(--brand-purple))",
         "accent-economy": "hsl(var(--accent-economy))",
+        "accent-economy-light": "hsl(var(--accent-economy-light))",
+        "footer-bg": "hsl(var(--footer-bg))",
+        "text-body": "hsl(var(--text-body))",
+        "text-dark": "hsl(var(--text-dark))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

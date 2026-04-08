@@ -33,7 +33,7 @@ export default function ProblemSection() {
                 <span className="text-primary"> linha de produção.</span>
               </h2>
 
-              <div className="text-muted-foreground text-sm leading-relaxed space-y-4 max-w-xl">
+              <div className="text-muted-foreground text-[15px] leading-[1.65] space-y-4 max-w-xl">
                 <p>A maioria das indústrias nunca calculou quanto perde com tampas.</p>
                 <p>
                   Não apenas no estoque — mas no tempo de linha parada por tampa errada, no retrabalho por proteção que falhou, no descarte de peças contaminadas durante a pintura, e nos atrasos de embarque por componentes danificados no transporte.
@@ -56,48 +56,47 @@ export default function ProblemSection() {
           </div>
 
           <div className="space-y-4">
-            {[
-              {
-                title: "// O padrão antigo",
-                tone: "muted",
-                items: legacyProblems,
-                icon: X,
-              },
-              {
-                title: "// Com Capflex",
-                tone: "primary",
-                items: capflexBenefits,
-                icon: Check,
-              },
-            ].map((card, index) => {
-              const Icon = card.icon;
-              const isPrimary = card.tone === "primary";
+            {/* Padrão Convencional — fundo escuro */}
+            <div
+              className={`relative p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={{
+                background: "#0D1117",
+                ...(inView ? { animationDelay: "240ms" } : {}),
+              }}
+            >
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-[#8892A4]">
+                {"// O padrão antigo"}
+              </h3>
+              <ul className="space-y-3">
+                {legacyProblems.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-[#F0F4F8]/70">
+                    <X size={14} className="text-[#F0F4F8]/40 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              return (
-                <div
-                  key={card.title}
-                  className={`industrial-card p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 ${isPrimary ? "border-primary/30 bg-card" : "bg-card/70"} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-                  style={inView ? { animationDelay: `${240 + index * 160}ms` } : undefined}
-                >
-                  {isPrimary && <div className="absolute top-0 left-0 w-full h-[2px] bg-accent-economy" />}
-                  <h3 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-5 ${isPrimary ? "text-accent-economy" : "text-muted-foreground"}`}>
-                    {card.title}
-                  </h3>
-                  <ul className="space-y-3">
-                    {card.items.map((item, itemIndex) => (
-                      <li
-                        key={item}
-                        className={`flex items-start gap-3 text-sm transition-all duration-300 hover:translate-x-1 ${isPrimary ? "text-foreground" : "text-muted-foreground"}`}
-                        style={inView ? { animationDelay: `${320 + index * 120 + itemIndex * 70}ms` } : undefined}
-                      >
-                        <Icon size={14} className={`${isPrimary ? "text-accent-economy" : "text-destructive"} mt-0.5 shrink-0`} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
+            {/* Com Capflex — fundo teal */}
+            <div
+              className={`relative p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={{
+                background: "#1A7F6E",
+                ...(inView ? { animationDelay: "400ms" } : {}),
+              }}
+            >
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-white/80">
+                {"// Com Capflex"}
+              </h3>
+              <ul className="space-y-3">
+                {capflexBenefits.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/90">
+                    <Check size={14} className="text-white/90 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

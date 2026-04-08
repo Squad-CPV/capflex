@@ -40,7 +40,7 @@ export default function FAQSection() {
 
         <div className="border border-border bg-card backdrop-blur-sm">
           {faqs.map((faq, i) => (
-            <div key={i} className={`${i < faqs.length - 1 ? "border-b border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: `${140 + i * 90}ms` } : undefined}>
+            <div key={i} className={`${i < faqs.length - 1 ? "border-b border-[rgba(0,0,0,0.08)]" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: `${140 + i * 90}ms` } : undefined}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left group hover:bg-surface-raised transition-colors"
@@ -53,10 +53,18 @@ export default function FAQSection() {
                     {faq.q}
                   </span>
                 </div>
-                <ChevronDown
-                  size={16}
-                  className={`shrink-0 ml-4 transition-transform duration-300 text-accent-economy ${openIndex === i ? "rotate-180" : ""}`}
-                />
+                <div
+                  className={`w-7 h-7 shrink-0 ml-4 flex items-center justify-center transition-all duration-300 ${
+                    openIndex === i
+                      ? "bg-primary text-white"
+                      : "bg-foreground text-card"
+                  }`}
+                >
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform duration-300 ${openIndex === i ? "rotate-180" : ""}`}
+                  />
+                </div>
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-40" : "max-h-0"}`}>
                 <div className="px-6 pb-5 pl-[52px]">

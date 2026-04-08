@@ -41,12 +41,11 @@ export default function ContactFormSection() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const inputClass = "w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors";
+  const inputClass = "w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] px-4 py-3 text-sm text-foreground placeholder:text-[rgba(255,255,255,0.20)] focus:outline-none focus:border-primary transition-colors";
+  const selectClass = `${inputClass} appearance-none`;
 
   return (
     <section id="formulario" className="py-24 md:py-32 bg-background industrial-section relative overflow-hidden">
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[30rem] h-[30rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.08),transparent_65%)] pointer-events-none blur-3xl" />
-      <div className="absolute top-0 left-0 w-[25rem] h-[25rem] bg-[radial-gradient(circle,hsl(var(--accent-economy)/0.06),transparent_65%)] pointer-events-none blur-2xl" />
       <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
@@ -72,14 +71,14 @@ export default function ContactFormSection() {
                 { n: "03", text: "Enviamos amostras para teste" },
               ].map((step) => (
                 <div key={step.n} className="flex items-center gap-4">
-                  <span className="text-[10px] font-bold text-accent-economy text-mono w-5">{step.n}</span>
+                  <span className="w-7 h-7 flex items-center justify-center bg-primary/15 text-[10px] font-bold text-primary text-mono">{step.n}</span>
                   <span className="text-sm text-muted-foreground">{step.text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="border border-border bg-card p-6 md:p-8 space-y-5">
+          <form onSubmit={handleSubmit} className="border border-[rgba(255,255,255,0.10)] bg-[rgba(255,255,255,0.02)] p-6 md:p-8 space-y-5">
             <div className="w-full h-[2px] bg-primary mb-4" />
             
             {([
@@ -103,7 +102,7 @@ export default function ContactFormSection() {
 
             <div>
               <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">Segmento</label>
-              <select value={form.segmento || ""} onChange={(e) => update("segmento", e.target.value)} className={inputClass}>
+              <select value={form.segmento || ""} onChange={(e) => update("segmento", e.target.value)} className={selectClass}>
                 <option value="">Selecione o segmento</option>
                 <option value="montadora">Montadora</option>
                 <option value="agricola">Agrícola</option>
@@ -116,7 +115,7 @@ export default function ContactFormSection() {
 
             <div>
               <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">Volume mensal de tampas</label>
-              <select value={form.volume || ""} onChange={(e) => update("volume", e.target.value)} className={inputClass}>
+              <select value={form.volume || ""} onChange={(e) => update("volume", e.target.value)} className={selectClass}>
                 <option value="">Selecione o volume</option>
                 <option value="abaixo-10k">Abaixo de 10.000</option>
                 <option value="10k-50k">10.000 a 50.000</option>

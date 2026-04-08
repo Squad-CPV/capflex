@@ -12,17 +12,23 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background">
-      <div className="h-[1px] bg-border" />
+    <footer style={{ background: "hsl(214 30% 5%)" }}>
+      <div className="h-[1px]" style={{ background: "rgba(255,255,255,0.06)" }} />
       <div className="container py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img src={capflexLogo} alt="Logo Capflex" className="h-12 md:h-24 w-auto max-w-[220px] object-contain brightness-0 invert" />
             </div>
-            <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
+            <p className="text-xs text-muted-foreground max-w-xs leading-relaxed mb-4">
               Engenharia de proteção para processos que não aceitam falha.
             </p>
+            <div className="flex items-center gap-2">
+              <Leaf size={14} className="text-accent-economy shrink-0" />
+              <span className="text-[11px] font-bold text-accent-economy">
+                Compromisso ESG — Menor descarte plástico
+              </span>
+            </div>
           </div>
 
           <div>
@@ -32,23 +38,16 @@ export default function Footer() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="text-xs text-muted-foreground hover:text-primary transition-colors uppercase tracking-wider font-medium"
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider font-medium"
                 >
                   {l.label}
                 </a>
               ))}
+            </div>
           </div>
-
-          <div className="flex items-center gap-2 px-3 py-2 border border-accent-economy/30 bg-accent-economy/5">
-            <Leaf size={14} className="text-accent-economy shrink-0" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-accent-economy">
-              Compromisso ESG — Menor descarte plástico por unidade produzida
-            </span>
-          </div>
-        </div>
         </div>
       </div>
-      <div className="border-t border-border">
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div className="container py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-[10px] text-muted-foreground uppercase tracking-[0.1em]">
             © 2026 Capflex · Todos os direitos reservados

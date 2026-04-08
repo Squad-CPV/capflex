@@ -33,8 +33,6 @@ export default function SegmentsSection() {
 
   return (
     <section id="segmentos" className="py-24 md:py-32 bg-background industrial-section overflow-hidden relative">
-      <div className="absolute left-0 bottom-10 w-72 h-72 bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.08),transparent_70%)] pointer-events-none" />
-
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Segmentos</div>
 
@@ -46,12 +44,12 @@ export default function SegmentsSection() {
           {segments.map((s, i) => (
             <div
               key={s.title}
-              className={`p-8 border border-border md:border-0 bg-card/40 md:bg-transparent group transition-all duration-300 hover:bg-surface-raised hover:-translate-y-1 ${i < 2 ? "md:border-b border-border" : ""} ${i % 2 === 0 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              className={`p-8 border border-border md:border-0 group transition-all duration-300 hover:bg-[rgba(255,255,255,0.05)] hover:-translate-y-1 ${i < 2 ? "md:border-b border-border" : ""} ${i % 2 === 0 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
               style={inView ? { animationDelay: `${140 + i * 120}ms` } : undefined}
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 border border-accent-economy/25 rounded-full flex items-center justify-center bg-background/40 group-hover:border-accent-economy/60 transition-colors">
-                  <s.icon size={28} className="text-accent-economy group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                  <s.icon size={28} className="text-foreground group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{s.number}</span>
               </div>
