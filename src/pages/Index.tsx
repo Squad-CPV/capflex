@@ -11,6 +11,7 @@ import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       <FAQSection />
       <ContactFormSection />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
