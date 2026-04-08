@@ -21,7 +21,7 @@ export default function ProblemSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="problema" className="py-24 md:py-32 section-light industrial-section overflow-hidden">
+    <section id="problema" className="py-24 md:py-32 bg-background overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Diagnóstico</div>
 
@@ -45,7 +45,7 @@ export default function ProblemSection() {
             </div>
 
             <div
-              className={`relative pl-5 pr-6 py-5 border border-primary/25 bg-card/50 backdrop-blur-sm max-w-xl transition-all duration-300 hover:border-primary/45 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              className={`relative pl-5 pr-6 py-5 border border-primary/20 bg-primary/5 max-w-xl transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
               style={inView ? { animationDelay: "180ms" } : undefined}
             >
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
@@ -56,42 +56,37 @@ export default function ProblemSection() {
           </div>
 
           <div className="space-y-4">
-            {/* Padrão Convencional — fundo escuro */}
+            {/* Padrão Convencional */}
             <div
-              className={`relative p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={{
-                background: "#0D1117",
-                ...(inView ? { animationDelay: "240ms" } : {}),
-              }}
+              className={`relative p-6 md:p-7 overflow-hidden border border-border bg-muted transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={inView ? { animationDelay: "240ms" } : undefined}
             >
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-[#8892A4]">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-muted-foreground">
                 {"// O padrão antigo"}
               </h3>
               <ul className="space-y-3">
                 {legacyProblems.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#F0F4F8]/70">
-                    <X size={14} className="text-[#F0F4F8]/40 mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <X size={14} className="text-destructive/60 mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Com Capflex — fundo teal */}
+            {/* Com Capflex */}
             <div
-              className={`relative p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={{
-                background: "#1A7F6E",
-                ...(inView ? { animationDelay: "400ms" } : {}),
-              }}
+              className={`relative p-6 md:p-7 overflow-hidden border border-primary/20 bg-primary/5 transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={inView ? { animationDelay: "400ms" } : undefined}
             >
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-white/80">
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary" />
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-primary">
                 {"// Com Capflex"}
               </h3>
               <ul className="space-y-3">
                 {capflexBenefits.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-white/90">
-                    <Check size={14} className="text-white/90 mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-foreground">
+                    <Check size={14} className="text-primary mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}

@@ -30,7 +30,7 @@ export default function FAQSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-24 md:py-32 section-light overflow-hidden relative">
+    <section className="py-24 md:py-32 bg-background overflow-hidden relative">
       <div ref={ref} className={`container max-w-4xl relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">FAQ</div>
 
@@ -38,15 +38,15 @@ export default function FAQSection() {
           Perguntas que todo diretor faz antes de <span className="text-primary">mudar de fornecedor.</span>
         </h2>
 
-        <div className="border border-border bg-card backdrop-blur-sm">
+        <div className="border border-border bg-card">
           {faqs.map((faq, i) => (
-            <div key={i} className={`${i < faqs.length - 1 ? "border-b border-[rgba(0,0,0,0.08)]" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: `${140 + i * 90}ms` } : undefined}>
+            <div key={i} className={`${i < faqs.length - 1 ? "border-b border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: `${140 + i * 90}ms` } : undefined}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left group hover:bg-surface-raised transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-[10px] font-bold text-accent-economy text-mono mt-0.5 shrink-0">
+                  <span className="text-[10px] font-bold text-primary text-mono mt-0.5 shrink-0">
                     0{i + 1}
                   </span>
                   <span className={`text-sm font-semibold transition-colors ${openIndex === i ? "text-primary" : "text-foreground"}`}>
@@ -57,7 +57,7 @@ export default function FAQSection() {
                   className={`w-7 h-7 shrink-0 ml-4 flex items-center justify-center transition-all duration-300 ${
                     openIndex === i
                       ? "bg-primary text-white"
-                      : "bg-foreground text-card"
+                      : "bg-foreground text-white"
                   }`}
                 >
                   <ChevronDown

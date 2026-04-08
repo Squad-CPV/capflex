@@ -41,26 +41,25 @@ export default function ContactFormSection() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const inputClass = "w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] px-4 py-3 text-sm text-foreground placeholder:text-[rgba(255,255,255,0.20)] focus:outline-none focus:border-primary transition-colors";
-  const selectClass = `${inputClass} appearance-none`;
+  const inputClass = "w-full bg-white/5 border border-white/15 px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-primary transition-colors";
 
   return (
-    <section id="formulario" className="py-24 md:py-32 bg-background industrial-section relative overflow-hidden">
+    <section id="formulario" className="py-24 md:py-32 section-dark relative overflow-hidden">
       <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <div className="section-label">Contato</div>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 leading-[1.05]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-[1.05]">
               Valide a eficiência Capflex no
               <span className="text-primary"> seu processo.</span>
             </h2>
             
-            <div className="w-16 h-[2px] bg-accent-economy my-6" />
+            <div className="w-16 h-[2px] bg-primary my-6" />
             
-            <p className="text-xl text-accent-economy font-bold mb-4">Sem custo. Sem compromisso.</p>
+            <p className="text-xl text-primary font-bold mb-4">Sem custo. Sem compromisso.</p>
             
-            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+            <p className="text-sm text-white/60 leading-relaxed mb-8">
               Preencha o formulário ao lado. Nossa equipe técnica analisa seu processo e envia amostras selecionadas especificamente para o seu caso.
             </p>
 
@@ -72,13 +71,13 @@ export default function ContactFormSection() {
               ].map((step) => (
                 <div key={step.n} className="flex items-center gap-4">
                   <span className="w-7 h-7 flex items-center justify-center bg-primary/15 text-[10px] font-bold text-primary text-mono">{step.n}</span>
-                  <span className="text-sm text-muted-foreground">{step.text}</span>
+                  <span className="text-sm text-white/70">{step.text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="border border-[rgba(255,255,255,0.10)] bg-[rgba(255,255,255,0.02)] p-6 md:p-8 space-y-5">
+          <form onSubmit={handleSubmit} className="border border-white/10 bg-white/5 p-6 md:p-8 space-y-5">
             <div className="w-full h-[2px] bg-primary mb-4" />
             
             {([
@@ -88,7 +87,7 @@ export default function ContactFormSection() {
               { field: "cargo" as const, label: "Cargo", type: "text", placeholder: "Diretor Industrial, Compras..." },
             ] as const).map((f) => (
               <div key={f.field}>
-                <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">{f.label}</label>
+                <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">{f.label}</label>
                 <input
                   type={f.type}
                   value={form[f.field] || ""}
@@ -101,8 +100,8 @@ export default function ContactFormSection() {
             ))}
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">Segmento</label>
-              <select value={form.segmento || ""} onChange={(e) => update("segmento", e.target.value)} className={selectClass}>
+              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">Segmento</label>
+              <select value={form.segmento || ""} onChange={(e) => update("segmento", e.target.value)} className={inputClass}>
                 <option value="">Selecione o segmento</option>
                 <option value="montadora">Montadora</option>
                 <option value="agricola">Agrícola</option>
@@ -114,8 +113,8 @@ export default function ContactFormSection() {
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground mb-2">Volume mensal de tampas</label>
-              <select value={form.volume || ""} onChange={(e) => update("volume", e.target.value)} className={selectClass}>
+              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">Volume mensal de tampas</label>
+              <select value={form.volume || ""} onChange={(e) => update("volume", e.target.value)} className={inputClass}>
                 <option value="">Selecione o volume</option>
                 <option value="abaixo-10k">Abaixo de 10.000</option>
                 <option value="10k-50k">10.000 a 50.000</option>
@@ -128,7 +127,7 @@ export default function ContactFormSection() {
               Solicitar Amostra Técnica Gratuita →
             </button>
 
-            <p className="text-center text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+            <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white/40">
               Nossa equipe retorna em até 1 dia útil com a seleção de modelos para o seu processo.
             </p>
           </form>
