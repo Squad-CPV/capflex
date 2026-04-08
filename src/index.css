@@ -22,7 +22,7 @@
     --secondary-foreground: 210 20% 90%;
 
     --muted: 214 22% 14%;
-    --muted-foreground: 214 15% 58%;
+    --muted-foreground: 214 15% 70%;
 
     --accent: 214 22% 16%;
     --accent-foreground: 210 20% 95%;
@@ -94,9 +94,9 @@
 
   .industrial-tag {
     @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border;
-    border-color: hsl(var(--primary) / 0.4);
-    color: hsl(var(--primary));
-    background: hsl(var(--primary) / 0.08);
+    border-color: hsl(var(--accent-economy) / 0.4);
+    color: hsl(var(--accent-economy));
+    background: hsl(var(--accent-economy) / 0.08);
   }
 
   .industrial-card {
