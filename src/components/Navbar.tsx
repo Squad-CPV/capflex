@@ -14,10 +14,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-[12px] border-b border-[rgba(255,255,255,0.06)]">
-      <div className="container flex items-center justify-between h-20 md:h-28">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-[12px] border-b border-border">
+      <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center gap-3 shrink-0">
-          <img src={capflexLogo} alt="Logo Capflex" className="h-10 sm:h-12 md:h-24 w-auto max-w-[180px] md:max-w-none object-contain brightness-0 invert" />
+          <img src={capflexLogo} alt="Logo Capflex" className="h-8 sm:h-10 md:h-12 w-auto max-w-[160px] object-contain" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -25,7 +25,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors"
             >
               {l.label}
             </a>
@@ -45,13 +45,13 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-background border-b border-[rgba(255,255,255,0.06)]">
+        <div className="md:hidden bg-background border-b border-border">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground hover:bg-card transition-colors"
+              className="block px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
             >
               {l.label}
             </a>
