@@ -48,7 +48,7 @@ export default function CaseSection() {
                 <span className="text-[10px] font-bold text-primary text-mono">{r.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{r.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(35,39,80,0.55)" }}>{r.text}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(35,39,80,0.72)" }}>{r.text}</p>
             </div>
           ))}
         </div>
