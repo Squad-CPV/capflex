@@ -64,7 +64,7 @@ export default function ApplicationsSection() {
               </div>
 
               <div className="space-y-3">
-                <p className="text-sm leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.72)" }}>{c.text}</p>
+                <p className="text-[15px] leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.72)" }}>{c.text}</p>
               </div>
 
               <div className="mt-6 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />

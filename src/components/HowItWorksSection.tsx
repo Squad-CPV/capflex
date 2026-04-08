@@ -54,7 +54,7 @@ export default function HowItWorksSection() {
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{c.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{c.title}</h3>
-              <p className="text-sm leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.72)" }}>{c.text}</p>
+              <p className="text-[15px] leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.72)" }}>{c.text}</p>
             </div>
           ))}
         </div>

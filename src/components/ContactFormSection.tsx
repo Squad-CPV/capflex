@@ -63,7 +63,7 @@ export default function ContactFormSection() {
             
             <p className="text-xl text-primary font-bold mb-4">Sem custo. Sem compromisso.</p>
             
-            <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.60)" }}>
+            <p className="text-[15px] leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.60)" }}>
               Preencha o formulário ao lado. Nossa equipe técnica analisa seu processo e envia amostras selecionadas especificamente para o seu caso.
             </p>
 
