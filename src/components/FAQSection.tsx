@@ -65,7 +65,7 @@ export default function FAQSection() {
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-40" : "max-h-0"}`}>
                 <div className="px-6 pb-5 pl-[52px]">
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(35,39,80,0.65)" }}>{faq.a}</p>
+                  <p className="text-[15px] leading-relaxed" style={{ color: "rgba(35,39,80,0.65)" }}>{faq.a}</p>
                 </div>
               </div>
             </div>

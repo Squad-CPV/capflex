@@ -33,7 +33,7 @@ export default function ProblemSection() {
                 <span className="text-primary"> linha de produção.</span>
               </h2>
 
-              <div className="text-[15px] leading-[1.65] space-y-4 max-w-xl" style={{ color: "rgba(35,39,80,0.60)" }}>
+              <div className="text-[15px] leading-[1.65] space-y-4 max-w-xl" style={{ color: "rgba(35,39,80,0.72)" }}>
                 <p>A maioria das indústrias nunca calculou quanto perde com tampas.</p>
                 <p>
                   Não apenas no estoque — mas no tempo de linha parada por tampa errada, no retrabalho por proteção que falhou, no descarte de peças contaminadas durante a pintura, e nos atrasos de embarque por componentes danificados no transporte.

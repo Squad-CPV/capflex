@@ -54,7 +54,7 @@ export default function SegmentsSection() {
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{s.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{s.title}</h3>
-              <p className="text-sm leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.60)" }}>{s.text}</p>
+              <p className="text-[15px] leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.72)" }}>{s.text}</p>
               <div className="mt-6 w-full h-[1px] bg-border group-hover:bg-primary/50 transition-colors" />
             </div>
           ))}

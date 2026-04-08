@@ -36,7 +36,7 @@ export default function AnchorNumberSection() {
                 em economia anual de estoque e processo.
               </p>
               <div className="w-16 h-[2px] bg-primary my-6" />
-              <p className="text-sm leading-relaxed max-w-md" style={{ color: "rgba(35,39,80,0.55)" }}>
+              <p className="text-[15px] leading-relaxed max-w-md" style={{ color: "rgba(35,39,80,0.72)" }}>
                 Esse é o impacto médio estimado quando indústrias de médio e grande porte substituem 60+ modelos de tampas por 5 modelos Capflex.
               </p>
             </div>
@@ -51,7 +51,7 @@ export default function AnchorNumberSection() {
                 <li
                   key={item}
                   className={`flex items-start gap-4 text-sm group pb-4 transition-all duration-300 hover:translate-x-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-                  style={{ borderBottom: "1px solid rgba(35,39,80,0.10)", color: "rgba(35,39,80,0.55)", ...(inView ? { animationDelay: `${220 + i * 90}ms` } : {}) }}
+                  style={{ borderBottom: "1px solid rgba(35,39,80,0.10)", color: "rgba(35,39,80,0.72)", ...(inView ? { animationDelay: `${220 + i * 90}ms` } : {}) }}
                 >
                   <span className="text-[10px] font-bold text-primary mt-0.5 text-mono w-5 shrink-0">
                     0{i + 1}

@@ -23,7 +23,7 @@
     --secondary-foreground: 235 39% 23%;
 
     --muted: 231 33% 97%;
-    --muted-foreground: 235 20% 42%;
+    --muted-foreground: 235 20% 35%;
 
     --accent: 231 33% 97%;
     --accent-foreground: 235 39% 23%;
@@ -99,6 +99,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
   }
   html {
     scroll-behavior: smooth;
