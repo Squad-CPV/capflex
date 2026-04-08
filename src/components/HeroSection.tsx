@@ -29,7 +29,7 @@ export default function HeroSection() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.78) 0%, rgba(35,39,80,0.50) 45%, rgba(35,39,80,0.62) 100%)" }} />
       </div>
 
-      <div ref={ref} className="container relative z-10 pb-12 md:pb-28">
+      <div ref={ref} className="container relative z-10 pb-12 md:pb-28" style={{ textShadow: "0 2px 12px rgba(35,39,80,0.5)" }}>
         <div className="max-w-4xl">
           {/* Eyebrow — sem fundo sólido, apenas texto + traço */}
           <div className={`${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}>
