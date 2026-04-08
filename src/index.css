@@ -4,38 +4,69 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 25 95% 53%;
+    /* ── Base: azul-aço industrial (#0D1117) ── */
+    --background: 216 28% 7%;
+    --foreground: 210 20% 95%;
+
+    --card: 214 25% 11%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 214 25% 11%;
+    --popover-foreground: 210 20% 95%;
+
+    /* ── Acento principal: vermelho-sinal (uso restrito — CTA, números, sublinhado) ── */
+    --primary: 12 85% 51%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 220 9% 64%;
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+
+    --secondary: 214 22% 14%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 214 22% 14%;
+    --muted-foreground: 214 15% 58%;
+
+    --accent: 214 22% 16%;
+    --accent-foreground: 210 20% 95%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 25 95% 53%;
+
+    --border: 214 18% 18%;
+    --input: 214 18% 18%;
+    --ring: 12 85% 51%;
+
     --radius: 0px;
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 25 95% 53%;
+
+    /* ── Sidebar ── */
+    --sidebar-background: 216 28% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 12 85% 51%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 25 95% 53%;
-    
-    --surface-raised: 0 0% 7%;
-    --hazard: 45 100% 50%;
+    --sidebar-accent: 214 22% 14%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 214 18% 18%;
+    --sidebar-ring: 12 85% 51%;
+
+    /* ── Superfícies especiais ── */
+    --surface-raised: 214 25% 9%;
     --brand-purple: 270 60% 50%;
+
+    /* ── Acento economia: teal (#1A7F6E) ── */
+    --accent-economy: 170 66% 30%;
+
+    /* ── Seções claras (alternância) ── */
+    --surface-light: 214 23% 94%;
+    --surface-white: 0 0% 100%;
+  }
+
+  .section-light {
+    --foreground: 214 28% 12%;
+    --card-foreground: 214 28% 12%;
+    --muted-foreground: 214 15% 42%;
+    --card: 0 0% 100%;
+    --border: 214 18% 85%;
+    --surface-raised: 214 20% 90%;
+    background: hsl(var(--surface-light));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -61,7 +92,6 @@
     @apply absolute top-0 left-0 w-1 h-full bg-primary opacity-20;
   }
 
-
   .industrial-tag {
     @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] border;
     border-color: hsl(var(--primary) / 0.4);
@@ -86,16 +116,24 @@
     letter-spacing: -0.03em;
   }
 
+  .economy-number {
+    @apply font-extrabold leading-none;
+    color: hsl(var(--accent-economy));
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
   .section-label {
     @apply inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-6;
   }
   .section-label::before {
     content: '';
-    @apply w-8 h-[1px] bg-primary;
+    @apply w-8 h-[1px];
+    background: hsl(var(--accent-economy));
   }
 
   .btn-industrial {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-background text-sm font-extrabold uppercase tracking-wider transition-all duration-200;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground text-sm font-extrabold uppercase tracking-wider transition-all duration-200;
     clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
   }
   .btn-industrial:hover {
@@ -107,7 +145,7 @@
     @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary text-sm font-bold uppercase tracking-wider transition-all duration-200;
   }
   .btn-industrial-outline:hover {
-    @apply bg-primary text-background;
+    @apply bg-primary text-primary-foreground;
   }
 
   .grid-line {
@@ -116,7 +154,8 @@
   }
 
   .stat-block {
-    @apply relative pl-4 border-l-2 border-primary;
+    @apply relative pl-4 border-l-2;
+    border-color: hsl(var(--accent-economy));
   }
 }
 

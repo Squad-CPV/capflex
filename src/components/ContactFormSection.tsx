@@ -45,8 +45,8 @@ export default function ContactFormSection() {
 
   return (
     <section id="formulario" className="py-24 md:py-32 bg-background industrial-section relative overflow-hidden">
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[30rem] h-[30rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.10),transparent_65%)] pointer-events-none blur-3xl" />
-      <div className="absolute top-0 left-0 w-[25rem] h-[25rem] bg-[radial-gradient(circle,hsl(var(--primary)/0.08),transparent_65%)] pointer-events-none blur-2xl" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[30rem] h-[30rem] bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.08),transparent_65%)] pointer-events-none blur-3xl" />
+      <div className="absolute top-0 left-0 w-[25rem] h-[25rem] bg-[radial-gradient(circle,hsl(var(--accent-economy)/0.06),transparent_65%)] pointer-events-none blur-2xl" />
       <div ref={ref} className={`container transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
@@ -57,9 +57,9 @@ export default function ContactFormSection() {
               <span className="text-primary"> seu processo.</span>
             </h2>
             
-            <div className="w-16 h-[2px] bg-primary my-6" />
+            <div className="w-16 h-[2px] bg-accent-economy my-6" />
             
-            <p className="text-xl text-primary font-bold mb-4">Sem custo. Sem compromisso.</p>
+            <p className="text-xl text-accent-economy font-bold mb-4">Sem custo. Sem compromisso.</p>
             
             <p className="text-sm text-muted-foreground leading-relaxed mb-8">
               Preencha o formulário ao lado. Nossa equipe técnica analisa seu processo e envia amostras selecionadas especificamente para o seu caso.
@@ -72,7 +72,7 @@ export default function ContactFormSection() {
                 { n: "03", text: "Enviamos amostras para teste" },
               ].map((step) => (
                 <div key={step.n} className="flex items-center gap-4">
-                  <span className="text-[10px] font-bold text-primary text-mono w-5">{step.n}</span>
+                  <span className="text-[10px] font-bold text-accent-economy text-mono w-5">{step.n}</span>
                   <span className="text-sm text-muted-foreground">{step.text}</span>
                 </div>
               ))}

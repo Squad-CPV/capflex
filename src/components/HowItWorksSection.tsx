@@ -27,7 +27,7 @@ export default function HowItWorksSection() {
 
   return (
     <section id="solucao" className="py-24 md:py-32 bg-background industrial-section overflow-hidden">
-      <div className="absolute left-0 top-24 w-64 h-64 bg-[radial-gradient(circle,hsl(var(--primary)/0.12),transparent_68%)] pointer-events-none" />
+      <div className="absolute left-0 top-24 w-64 h-64 bg-[radial-gradient(circle,hsl(var(--brand-purple)/0.08),transparent_68%)] pointer-events-none" />
 
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Tecnologia</div>
@@ -47,10 +47,10 @@ export default function HowItWorksSection() {
               className={`relative p-8 border border-border md:border-0 bg-card/60 md:bg-transparent group transition-all duration-300 hover:-translate-y-2 hover:bg-surface-raised ${i < 2 ? "md:border-r border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
               style={inView ? { animationDelay: `${220 + i * 140}ms` } : undefined}
             >
-              <div className="absolute inset-x-8 top-0 h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="absolute inset-x-8 top-0 h-[2px] bg-accent-economy origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 border border-primary/25 rounded-full flex items-center justify-center bg-background/50 group-hover:border-primary/50 transition-colors">
-                  <c.icon size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+                <div className="w-14 h-14 border border-accent-economy/25 rounded-full flex items-center justify-center bg-background/50 group-hover:border-accent-economy/50 transition-colors">
+                  <c.icon size={28} className="text-accent-economy group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{c.number}</span>
               </div>
@@ -61,7 +61,7 @@ export default function HowItWorksSection() {
         </div>
 
         <div className={`mt-8 flex items-center gap-3 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "620ms" } : undefined}>
-          <div className="w-2 h-2 bg-primary pulse" />
+          <div className="w-2 h-2 bg-accent-economy pulse" />
           <p className="text-xs text-muted-foreground">
             Fabricadas pelo processo <span className="text-foreground font-bold">PMF</span> — tecnologia proprietária com 15 anos de desenvolvimento em engenharia de polímeros industriais.
           </p>

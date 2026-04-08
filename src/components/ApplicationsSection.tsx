@@ -31,9 +31,7 @@ export default function ApplicationsSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="aplicacoes" className="py-24 md:py-32 bg-card overflow-hidden relative">
-      <div className="absolute right-0 top-16 w-72 h-72 bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_68%)] pointer-events-none" />
-
+    <section id="aplicacoes" className="py-24 md:py-32 section-light overflow-hidden relative">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Aplicações</div>
 
@@ -63,12 +61,12 @@ export default function ApplicationsSection() {
               </div>
 
               <div className="space-y-3">
-                <span className="text-[11px] font-bold text-primary font-mono block">{c.number}</span>
+                <span className="text-[11px] font-bold text-accent-economy font-mono block">{c.number}</span>
                 <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground">{c.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{c.text}</p>
               </div>
 
-              <div className="mt-6 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="mt-6 w-full h-[2px] bg-accent-economy origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </div>
           ))}
         </div>

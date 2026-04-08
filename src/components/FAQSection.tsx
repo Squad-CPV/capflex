@@ -30,9 +30,7 @@ export default function FAQSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-24 md:py-32 bg-card overflow-hidden relative">
-      <div className="absolute left-0 top-16 w-72 h-72 bg-[radial-gradient(circle,hsl(var(--primary)/0.12),transparent_70%)] pointer-events-none" />
-
+    <section className="py-24 md:py-32 section-light overflow-hidden relative">
       <div ref={ref} className={`container max-w-4xl relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">FAQ</div>
 
@@ -40,7 +38,7 @@ export default function FAQSection() {
           Perguntas que todo diretor faz antes de <span className="text-primary">mudar de fornecedor.</span>
         </h2>
 
-        <div className="border border-border bg-background/35 backdrop-blur-sm">
+        <div className="border border-border bg-card backdrop-blur-sm">
           {faqs.map((faq, i) => (
             <div key={i} className={`${i < faqs.length - 1 ? "border-b border-border" : ""} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: `${140 + i * 90}ms` } : undefined}>
               <button
@@ -48,7 +46,7 @@ export default function FAQSection() {
                 className="w-full flex items-center justify-between px-6 py-5 text-left group hover:bg-surface-raised transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-[10px] font-bold text-primary text-mono mt-0.5 shrink-0">
+                  <span className="text-[10px] font-bold text-accent-economy text-mono mt-0.5 shrink-0">
                     0{i + 1}
                   </span>
                   <span className={`text-sm font-semibold transition-colors ${openIndex === i ? "text-primary" : "text-foreground"}`}>
@@ -57,7 +55,7 @@ export default function FAQSection() {
                 </div>
                 <ChevronDown
                   size={16}
-                  className={`shrink-0 ml-4 transition-transform duration-300 text-primary ${openIndex === i ? "rotate-180" : ""}`}
+                  className={`shrink-0 ml-4 transition-transform duration-300 text-accent-economy ${openIndex === i ? "rotate-180" : ""}`}
                 />
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-40" : "max-h-0"}`}>

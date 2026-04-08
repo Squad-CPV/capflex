@@ -21,9 +21,7 @@ export default function ProblemSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="problema" className="py-24 md:py-32 bg-background industrial-section overflow-hidden">
-      <div className="absolute top-20 right-0 w-72 h-72 bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_68%)] pointer-events-none" />
-
+    <section id="problema" className="py-24 md:py-32 section-light industrial-section overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Diagnóstico</div>
 
@@ -81,8 +79,8 @@ export default function ProblemSection() {
                   className={`industrial-card p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 ${isPrimary ? "border-primary/30 bg-card" : "bg-card/70"} ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
                   style={inView ? { animationDelay: `${240 + index * 160}ms` } : undefined}
                 >
-                  {isPrimary && <div className="absolute top-0 left-0 w-full h-[2px] bg-primary" />}
-                  <h3 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-5 ${isPrimary ? "text-primary" : "text-muted-foreground"}`}>
+                  {isPrimary && <div className="absolute top-0 left-0 w-full h-[2px] bg-accent-economy" />}
+                  <h3 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-5 ${isPrimary ? "text-accent-economy" : "text-muted-foreground"}`}>
                     {card.title}
                   </h3>
                   <ul className="space-y-3">
@@ -92,7 +90,7 @@ export default function ProblemSection() {
                         className={`flex items-start gap-3 text-sm transition-all duration-300 hover:translate-x-1 ${isPrimary ? "text-foreground" : "text-muted-foreground"}`}
                         style={inView ? { animationDelay: `${320 + index * 120 + itemIndex * 70}ms` } : undefined}
                       >
-                        <Icon size={14} className={`${isPrimary ? "text-primary" : "text-destructive"} mt-0.5 shrink-0`} />
+                        <Icon size={14} className={`${isPrimary ? "text-accent-economy" : "text-destructive"} mt-0.5 shrink-0`} />
                         {item}
                       </li>
                     ))}
