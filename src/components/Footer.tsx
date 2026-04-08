@@ -1,4 +1,5 @@
 import capflexLogo from "@/assets/capflex-logo.png";
+import { Leaf } from "lucide-react";
 
 const footerLinks = [
   { label: "Problema", href: "#problema" },
