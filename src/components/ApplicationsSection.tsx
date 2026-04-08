@@ -31,7 +31,7 @@ export default function ApplicationsSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="aplicacoes" className="py-24 md:py-32 bg-background overflow-hidden relative">
+    <section id="aplicacoes" className="py-24 md:py-32 section-white overflow-hidden relative">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Aplicações</div>
 
@@ -56,7 +56,7 @@ export default function ApplicationsSection() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: c.objectPosition }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(235,39%,23%,0.75)] via-[hsl(235,39%,23%,0.30)] to-transparent" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(35,39,80,0.88), rgba(35,39,80,0.40), transparent)" }} />
                 <div className="absolute inset-0 flex flex-col justify-end p-5">
                   <span className="text-[11px] font-bold text-primary font-mono block mb-2">{c.number}</span>
                   <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-white">{c.title}</h3>
@@ -64,7 +64,7 @@ export default function ApplicationsSection() {
               </div>
 
               <div className="space-y-3">
-                <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{c.text}</p>
+                <p className="text-sm leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.60)" }}>{c.text}</p>
               </div>
 
               <div className="mt-6 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />

@@ -48,13 +48,13 @@ export default function SegmentsSection() {
               style={inView ? { animationDelay: `${140 + i * 120}ms` } : undefined}
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                <div className="w-14 h-14 flex items-center justify-center" style={{ background: "#F3ECF2" }}>
                   <s.icon size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{s.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{s.text}</p>
+              <p className="text-sm leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.60)" }}>{s.text}</p>
               <div className="mt-6 w-full h-[1px] bg-border group-hover:bg-primary/50 transition-colors" />
             </div>
           ))}

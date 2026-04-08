@@ -21,7 +21,7 @@ export default function ProblemSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="problema" className="py-24 md:py-32 bg-background overflow-hidden">
+    <section id="problema" className="py-24 md:py-32 section-light overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Diagnóstico</div>
 
@@ -33,7 +33,7 @@ export default function ProblemSection() {
                 <span className="text-primary"> linha de produção.</span>
               </h2>
 
-              <div className="text-muted-foreground text-[15px] leading-[1.65] space-y-4 max-w-xl">
+              <div className="text-[15px] leading-[1.65] space-y-4 max-w-xl" style={{ color: "rgba(35,39,80,0.60)" }}>
                 <p>A maioria das indústrias nunca calculou quanto perde com tampas.</p>
                 <p>
                   Não apenas no estoque — mas no tempo de linha parada por tampa errada, no retrabalho por proteção que falhou, no descarte de peças contaminadas durante a pintura, e nos atrasos de embarque por componentes danificados no transporte.
@@ -45,10 +45,9 @@ export default function ProblemSection() {
             </div>
 
             <div
-              className={`relative pl-5 pr-6 py-5 border border-primary/20 bg-primary/5 max-w-xl transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={inView ? { animationDelay: "180ms" } : undefined}
+              className={`relative pl-5 pr-6 py-5 max-w-xl transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={{ borderLeft: "3px solid #92568D", background: "#F3ECF2", ...(inView ? { animationDelay: "180ms" } : {}) }}
             >
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
               <p className="text-foreground font-bold text-sm md:text-base">
                 O problema não é a tampa. É a quantidade de modelos diferentes que você precisa manter.
               </p>
@@ -58,17 +57,17 @@ export default function ProblemSection() {
           <div className="space-y-4">
             {/* Padrão Convencional */}
             <div
-              className={`relative p-6 md:p-7 overflow-hidden border border-border bg-muted transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={inView ? { animationDelay: "240ms" } : undefined}
+              className={`relative p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={{ background: "#232750", ...(inView ? { animationDelay: "240ms" } : {}) }}
             >
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-muted-foreground">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5" style={{ color: "rgba(255,255,255,0.50)" }}>
                 {"// O padrão antigo"}
               </h3>
               <ul className="space-y-3">
                 {legacyProblems.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <X size={14} className="text-destructive/60 mt-0.5 shrink-0" />
-                    {item}
+                  <li key={item} className="flex items-start gap-3 text-sm text-white">
+                    <X size={14} className="mt-0.5 shrink-0" style={{ color: "rgba(255,255,255,0.45)" }} />
+                    <span style={{ color: "rgba(255,255,255,0.80)" }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -76,17 +75,16 @@ export default function ProblemSection() {
 
             {/* Com Capflex */}
             <div
-              className={`relative p-6 md:p-7 overflow-hidden border border-primary/20 bg-primary/5 transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={inView ? { animationDelay: "400ms" } : undefined}
+              className={`relative p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={{ background: "#92568D", ...(inView ? { animationDelay: "400ms" } : {}) }}
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary" />
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-primary">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-white">
                 {"// Com Capflex"}
               </h3>
               <ul className="space-y-3">
                 {capflexBenefits.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-foreground">
-                    <Check size={14} className="text-primary mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-white">
+                    <Check size={14} className="text-white mt-0.5 shrink-0" style={{ opacity: 0.9 }} />
                     {item}
                   </li>
                 ))}

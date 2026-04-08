@@ -41,7 +41,11 @@ export default function ContactFormSection() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const inputClass = "w-full bg-white/5 border border-white/15 px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-primary transition-colors";
+  const inputStyle = {
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.12)",
+    color: "#FFFFFF",
+  };
 
   return (
     <section id="formulario" className="py-24 md:py-32 section-dark relative overflow-hidden">
@@ -59,7 +63,7 @@ export default function ContactFormSection() {
             
             <p className="text-xl text-primary font-bold mb-4">Sem custo. Sem compromisso.</p>
             
-            <p className="text-sm text-white/60 leading-relaxed mb-8">
+            <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.60)" }}>
               Preencha o formulário ao lado. Nossa equipe técnica analisa seu processo e envia amostras selecionadas especificamente para o seu caso.
             </p>
 
@@ -70,14 +74,14 @@ export default function ContactFormSection() {
                 { n: "03", text: "Enviamos amostras para teste" },
               ].map((step) => (
                 <div key={step.n} className="flex items-center gap-4">
-                  <span className="w-7 h-7 flex items-center justify-center bg-primary/15 text-[10px] font-bold text-primary text-mono">{step.n}</span>
-                  <span className="text-sm text-white/70">{step.text}</span>
+                  <span className="w-7 h-7 flex items-center justify-center text-[10px] font-bold text-primary text-mono" style={{ background: "rgba(146,86,141,0.15)" }}>{step.n}</span>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.70)" }}>{step.text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="border border-white/10 bg-white/5 p-6 md:p-8 space-y-5">
+          <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5" style={{ border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,255,255,0.05)" }}>
             <div className="w-full h-[2px] bg-primary mb-4" />
             
             {([
@@ -87,21 +91,31 @@ export default function ContactFormSection() {
               { field: "cargo" as const, label: "Cargo", type: "text", placeholder: "Diretor Industrial, Compras..." },
             ] as const).map((f) => (
               <div key={f.field}>
-                <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">{f.label}</label>
+                <label className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "rgba(255,255,255,0.50)" }}>{f.label}</label>
                 <input
                   type={f.type}
                   value={form[f.field] || ""}
                   onChange={(e) => update(f.field, e.target.value)}
                   placeholder={f.placeholder}
-                  className={inputClass}
+                  className="w-full px-4 py-3 text-sm focus:outline-none transition-colors"
+                  style={{ ...inputStyle, "--tw-placeholder-color": "rgba(255,255,255,0.25)" } as React.CSSProperties}
+                  onFocus={(e) => e.currentTarget.style.borderColor = "#92568D"}
+                  onBlur={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"}
                 />
                 {errors[f.field] && <p className="text-xs text-destructive mt-1">{errors[f.field]}</p>}
               </div>
             ))}
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">Segmento</label>
-              <select value={form.segmento || ""} onChange={(e) => update("segmento", e.target.value)} className={inputClass}>
+              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "rgba(255,255,255,0.50)" }}>Segmento</label>
+              <select
+                value={form.segmento || ""}
+                onChange={(e) => update("segmento", e.target.value)}
+                className="w-full px-4 py-3 text-sm focus:outline-none transition-colors"
+                style={inputStyle}
+                onFocus={(e) => e.currentTarget.style.borderColor = "#92568D"}
+                onBlur={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"}
+              >
                 <option value="">Selecione o segmento</option>
                 <option value="montadora">Montadora</option>
                 <option value="agricola">Agrícola</option>
@@ -113,8 +127,15 @@ export default function ContactFormSection() {
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">Volume mensal de tampas</label>
-              <select value={form.volume || ""} onChange={(e) => update("volume", e.target.value)} className={inputClass}>
+              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "rgba(255,255,255,0.50)" }}>Volume mensal de tampas</label>
+              <select
+                value={form.volume || ""}
+                onChange={(e) => update("volume", e.target.value)}
+                className="w-full px-4 py-3 text-sm focus:outline-none transition-colors"
+                style={inputStyle}
+                onFocus={(e) => e.currentTarget.style.borderColor = "#92568D"}
+                onBlur={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"}
+              >
                 <option value="">Selecione o volume</option>
                 <option value="abaixo-10k">Abaixo de 10.000</option>
                 <option value="10k-50k">10.000 a 50.000</option>
@@ -127,7 +148,7 @@ export default function ContactFormSection() {
               Solicitar Amostra Técnica Gratuita →
             </button>
 
-            <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white/40">
+            <p className="text-center text-[10px] uppercase tracking-[0.1em]" style={{ color: "rgba(255,255,255,0.30)" }}>
               Nossa equipe retorna em até 1 dia útil com a seleção de modelos para o seu processo.
             </p>
           </form>
