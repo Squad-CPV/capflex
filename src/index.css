@@ -78,9 +78,9 @@
   /* Seções com fundo off-white #F5F6FA */
   .section-light {
     --card: 0 0% 100%;
-    --border: 235 20% 89%;
-    --surface-raised: 231 33% 95%;
-    background: hsl(231 33% 97%);
+    --border: 235 20% 86%;
+    --surface-raised: 231 25% 91%;
+    background: hsl(231 20% 92%);
     color: hsl(235 39% 23%);
   }
 
