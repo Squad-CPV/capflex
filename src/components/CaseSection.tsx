@@ -26,7 +26,7 @@ export default function CaseSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section className="py-24 md:py-32 section-white relative overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="section-label">Resultados comprovados</div>
 
@@ -40,15 +40,15 @@ export default function CaseSection() {
           {results.map((r, i) => (
             <div
               key={r.title}
-              className={`stat-block bg-card border border-border p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={inView ? { animationDelay: `${240 + i * 140}ms` } : undefined}
+              className={`stat-block p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+              style={{ background: "#F5F6FA", border: "0.5px solid rgba(35,39,80,0.08)", ...(inView ? { animationDelay: `${240 + i * 140}ms` } : {}) }}
             >
               <div className="flex items-start justify-between mb-4">
                 <r.icon size={24} className="text-primary" strokeWidth={1.5} />
                 <span className="text-[10px] font-bold text-primary text-mono">{r.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{r.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{r.text}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(35,39,80,0.55)" }}>{r.text}</p>
             </div>
           ))}
         </div>

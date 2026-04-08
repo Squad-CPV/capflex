@@ -48,13 +48,13 @@ export default function HowItWorksSection() {
               {i === 0 && <div className="absolute inset-x-0 top-0 h-[2px] bg-primary" />}
               <div className="absolute inset-x-8 top-0 h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                <div className="w-14 h-14 flex items-center justify-center" style={{ background: "#F3ECF2" }}>
                   <c.icon size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] font-bold text-muted-foreground text-mono">{c.number}</span>
               </div>
               <h3 className="text-xs font-extrabold uppercase tracking-[0.1em] text-foreground mb-3">{c.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{c.text}</p>
+              <p className="text-sm leading-relaxed group-hover:text-foreground transition-colors" style={{ color: "rgba(35,39,80,0.60)" }}>{c.text}</p>
             </div>
           ))}
         </div>
@@ -62,7 +62,7 @@ export default function HowItWorksSection() {
         <div className={`mt-8 flex items-center gap-3 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "620ms" } : undefined}>
           <div className="w-2 h-2 bg-primary rounded-full" />
           <p className="text-xs text-muted-foreground">
-            Fabricadas pelo processo <span className="text-foreground font-bold">PMF</span> — tecnologia proprietária com 15 anos de desenvolvimento em engenharia de polímeros industriais.
+            Fabricadas pelo processo <span className="text-primary font-bold">PMF</span> — tecnologia proprietária com 15 anos de desenvolvimento em engenharia de polímeros industriais.
           </p>
         </div>
       </div>

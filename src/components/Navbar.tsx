@@ -14,7 +14,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-[12px] border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b" style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(12px)", borderColor: "rgba(35,39,80,0.08)" }}>
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center gap-3 shrink-0">
           <img src={capflexLogo} alt="Logo Capflex" className="h-8 sm:h-10 md:h-12 w-auto max-w-[160px] object-contain" />
@@ -25,7 +25,10 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors"
+              className="text-[11px] font-bold uppercase tracking-[0.15em] transition-colors"
+              style={{ color: "rgba(35,39,80,0.65)" }}
+              onMouseEnter={(e) => e.currentTarget.style.color = "#232750"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "rgba(35,39,80,0.65)"}
             >
               {l.label}
             </a>
@@ -39,13 +42,13 @@ export default function Navbar() {
           Solicitar Amostra →
         </a>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground" aria-label="Menu">
+        <button onClick={() => setOpen(!open)} className="md:hidden" style={{ color: "#232750" }} aria-label="Menu">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="md:hidden bg-background" style={{ borderBottom: "1px solid rgba(35,39,80,0.08)" }}>
           {navLinks.map((l) => (
             <a
               key={l.href}
