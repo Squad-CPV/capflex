@@ -3,16 +3,16 @@ import { useInView } from "@/hooks/use-animations";
 
 const solutionHighlights = [
   {
-    title: "Roscas",
-    text: "Tamponamento flexível para múltiplos diâmetros com ajuste preciso.",
+    title: "Flanges",
+    text: "Proteção flexível para flanges de múltiplos diâmetros com ajuste e vedação precisos.",
   },
   {
-    title: "Furos",
-    text: "Proteção contra contaminação, impacto e retrabalho em linha.",
+    title: "Dutos",
+    text: "Proteção contra contaminação em dutos, impacto e retrabalho em linha de processo.",
   },
   {
-    title: "Conexões",
-    text: "Tamponamento seguro para embarque, estoque e processos críticos.",
+    title: "Mangueiras Industriais",
+    text: "Tamponamento seguro para mangueiras, conexões industriais, embarque e processos críticos.",
   },
 ];
 
@@ -22,19 +22,21 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-end pt-16 md:pt-20 overflow-hidden section-dark">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Peças industriais com tampas elásticas Capflex" width={1920} height={1080} className="w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.88) 0%, rgba(35,39,80,0.65) 50%, rgba(35,39,80,0.80) 100%)" }} />
+        <img src={heroImg} alt="Peças industriais com tampas elásticas Capflex" width={1920} height={1080} className="w-full h-full object-cover" style={{ objectPosition: "center left 20%" }} />
+        {/* Extra gradient to hide text on right side of photo */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(35,39,80,0.95) 0%, rgba(35,39,80,0.0) 40%)" }} />
+        {/* Main overlay — azul-noite, NOT lilás */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.90) 0%, rgba(35,39,80,0.68) 45%, rgba(35,39,80,0.78) 100%)" }} />
       </div>
-
-      
 
       <div ref={ref} className="container relative z-10 pb-12 md:pb-28">
         <div className="max-w-4xl">
+          {/* Eyebrow — sem fundo sólido, apenas texto + traço */}
           <div className={`${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}>
-            <div className="industrial-tag mb-5 md:mb-8 text-[9px] md:text-[10px]" style={{ borderColor: "rgba(146,86,141,0.5)", color: "#92568D", background: "rgba(146,86,141,0.12)" }}>
-              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+            <p className="inline-flex items-center gap-2 mb-5 md:mb-8 text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: "#92568D" }}>
+              <span className="inline-block w-5 h-[2px]" style={{ background: "#92568D" }} />
               Engenharia de tampas elásticas para alta exigência industrial
-            </div>
+            </p>
           </div>
 
           <h1
@@ -62,7 +64,7 @@ export default function HeroSection() {
             className={`text-[15px] md:text-lg font-light max-w-2xl mb-7 md:mb-10 leading-[1.65] ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
             style={{ color: "rgba(255,255,255,0.60)", ...(inView ? { animationDelay: "320ms" } : {}) }}
           >
-            Desenvolvemos soluções de tamponamento para proteger roscas, furos, conexões e superfícies críticas ao longo de fabricação,
+            Desenvolvemos soluções de tamponamento para proteger flanges, tubos, dutos e mangueiras industriais ao longo de fabricação,
             pintura, montagem, transporte e armazenagem.
           </p>
 
@@ -90,7 +92,7 @@ export default function HeroSection() {
                   ...(inView ? { animationDelay: `${520 + i * 120}ms` } : {}),
                 }}
               >
-                <p className="text-[10px] uppercase tracking-[0.15em] text-primary font-bold mb-1.5 md:mb-2">{item.title}</p>
+                <p className="text-[13px] uppercase tracking-[0.10em] font-bold mb-1.5 md:mb-2" style={{ color: "#92568D" }}>{item.title}</p>
                 <p className="text-xs md:text-sm font-light leading-relaxed" style={{ color: "rgba(255,255,255,0.60)" }}>{item.text}</p>
               </div>
             ))}
