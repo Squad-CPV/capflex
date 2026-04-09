@@ -28,13 +28,16 @@ export default function AboutSection() {
             <div className={`p-7 transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)", ...(inView ? { animationDelay: "160ms" } : {}) }}>
               <div className="text-sm leading-[1.65] space-y-4" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <p>
-                  A Capflex não surgiu de um catálogo. Surgiu de um problema real: a indústria de alta exigência precisava de proteção confiável para múltiplos diâmetros — e nenhuma solução do mercado resolvia isso com eficiência.
+                  A Capflex não surgiu de um catálogo. Surgiu de um problema real: tampas ocupam espaço, caem durante o processo, e cada diâmetro ou formato gera a necessidade de um novo tipo para poder atender. A indústria precisa focar no produto e de proteção adequada sem perder tempo com isso.
                 </p>
                 <p>
-                  15 anos de desenvolvimento em engenharia de polímeros resultaram em um produto que não existe no formato de prateleira. A Capflex é construída para processos que não aceitam falha.
+                  A solução veio há 15 anos, quando resolvemos estudar o assunto aplicando técnicas de Lean Manufacturing e Engenharia de Polímeros. Chegamos na solução: um produto que se molda em qualquer formato e tamanho, e que não se solta por questões de vibração, transporte ou intempéries.
                 </p>
                 <p>
-                  100% focada em proteção industrial, com histórico documentado de aplicação em processos críticos e nas maiores plantas industriais do Brasil.
+                  Foram 15 anos de desenvolvimento em Engenharia de Processos e Polímeros que resultaram em um produto que não existe no formato de prateleira. A Capflex é construída para processos que não aceitam falhas.
+                </p>
+                <p>
+                  Somos 100% focados em proteção industrial, com histórico documentado de aplicação em processos críticos e nas maiores plantas industriais do Brasil, entregando mais de 10 milhões de tampas e gerando muitos milhões de reais em saving nas operações onde foram aplicadas.
                 </p>
               </div>
             </div>
@@ -54,6 +57,22 @@ export default function AboutSection() {
           </div>
         </div>
 
+        {/* CTA Section */}
+        <div className={`mt-12 p-8 md:p-10 text-center ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={{ background: "rgba(146,86,141,0.10)", border: "1px solid rgba(146,86,141,0.25)", animationDelay: "400ms" }}>
+          <p className="text-xl md:text-2xl font-extrabold text-white mb-2">
+            Tudo isso agora disponível para você!
+          </p>
+          <p className="text-sm md:text-base mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Nossa missão é reduzir seus custos de processo sem perder eficiência.
+          </p>
+          <a
+            href="#formulario"
+            className="btn-industrial inline-block px-10 py-4 text-sm font-bold uppercase tracking-[0.12em]"
+          >
+            Clique aqui e saiba mais →
+          </a>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 mt-12" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
           {metrics.map((m, i) => (
             <div
@@ -62,7 +81,7 @@ export default function AboutSection() {
               style={{
                 background: "rgba(255,255,255,0.04)",
                 borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                ...(inView ? { animationDelay: `${400 + i * 120}ms` } : {}),
+                ...(inView ? { animationDelay: `${500 + i * 120}ms` } : {}),
               }}
             >
               <p className="economy-number text-3xl md:text-4xl mb-2 text-white">{m.number}</p>
