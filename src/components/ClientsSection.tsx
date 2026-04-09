@@ -18,14 +18,18 @@ export default function ClientsSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img src={clientsImg} alt="" className="w-full h-full object-cover" style={{ objectPosition: "center 30%" }} />
-        <div className="absolute inset-0 bg-white/85" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(35,39,80,0.82) 0%, rgba(35,39,80,0.65) 50%, rgba(35,39,80,0.78) 100%)" }} />
       </div>
 
       <div ref={ref} className={`container relative z-10 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-        <div className="section-label text-center">Clientes</div>
+        <div className="section-label" style={{ color: "#c490bf" }}>Clientes</div>
 
-        <h2 className={`text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-10 leading-[1.05] text-center ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}>
-          Confiado por líderes da <span className="text-primary">indústria automotiva</span>
+        <h2
+          className={`text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-10 leading-[1.05] text-center ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+          style={{ textShadow: "0 2px 16px rgba(35,39,80,0.7)" }}
+        >
+          Confiado por líderes da{" "}
+          <span style={{ color: "#c490bf", textShadow: "0 2px 20px rgba(146,86,141,0.5)" }}>indústria automotiva</span>
         </h2>
 
         {/* Client names */}
@@ -34,7 +38,11 @@ export default function ClientsSection() {
           style={inView ? { animationDelay: "120ms" } : undefined}
         >
           {clients.map((name) => (
-            <span key={name} className="text-sm md:text-base font-semibold tracking-wide" style={{ color: "rgba(35,39,80,0.55)" }}>
+            <span
+              key={name}
+              className="text-sm md:text-base font-semibold tracking-wide"
+              style={{ color: "rgba(255,255,255,0.75)", textShadow: "0 1px 8px rgba(35,39,80,0.5)" }}
+            >
               {name}
             </span>
           ))}
@@ -42,13 +50,20 @@ export default function ClientsSection() {
 
         {/* Spec cards */}
         <div
-          className={`grid grid-cols-2 md:grid-cols-4 border border-border divide-x divide-border bg-white/70 backdrop-blur-sm ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-          style={inView ? { animationDelay: "240ms" } : undefined}
+          className={`grid grid-cols-2 md:grid-cols-4 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+          style={{ border: "1px solid rgba(255,255,255,0.15)", ...(inView ? { animationDelay: "240ms" } : {}) }}
         >
-          {specs.map((s) => (
-            <div key={s.title} className="p-5 md:p-6 text-center">
-              <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-foreground mb-1.5">{s.title}</p>
-              <p className="text-[13px] leading-relaxed" style={{ color: "rgba(35,39,80,0.60)" }}>{s.text}</p>
+          {specs.map((s, i) => (
+            <div
+              key={s.title}
+              className="p-5 md:p-6 text-center backdrop-blur-sm"
+              style={{
+                background: "rgba(35,39,80,0.45)",
+                borderRight: i < 3 ? "1px solid rgba(255,255,255,0.10)" : "none",
+              }}
+            >
+              <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-white mb-1.5">{s.title}</p>
+              <p className="text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.70)" }}>{s.text}</p>
             </div>
           ))}
         </div>
