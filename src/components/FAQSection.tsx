@@ -5,23 +5,35 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     q: "A Capflex funciona em todos os meus diâmetros atuais?",
-    a: "Cada modelo cobre uma faixa definida de diâmetros. Nossa equipe técnica faz um mapeamento do seu portfólio atual e confirma a cobertura antes de qualquer proposta. Sem chute — com engenharia.",
+    a: "Cada modelo cobre uma faixa definida de diâmetros. Formato não importa — a Capflex absorve todos. Nossa equipe técnica faz um mapeamento do seu processo e confirma a cobertura antes de qualquer proposta. Sem chute — com engenharia.",
   },
   {
-    q: "Qual o impacto na minha linha durante a transição?",
-    a: "Zero. A substituição é feita por lote, sem parada de linha. O processo de validação inclui teste piloto com volume reduzido antes da adoção completa.",
+    q: "Qual o impacto na minha linha durante a implantação?",
+    a: "Zero. O espaço destinado é menor, a aplicação é simples. A substituição é feita sem parada de linha. Validamos tudo com um lote piloto e suporte no local — sua tampa convencional acaba, seu problema também.",
   },
   {
-    q: "A Capflex tem resistência química certificada?",
-    a: "Sim. A formulação é testada para óleos, solventes, tintas e ambientes classificados. Laudos técnicos disponíveis mediante solicitação.",
+    q: "O que eu ganho trocando pela solução Capflex?",
+    a: "Redução de tempo na produção e no desenvolvimento, economia de estoque e mais espaço de trabalho. Um único modelo Capflex pode substituir até 20 modelos convencionais — menos dinheiro parado no estoque, mais recurso no seu bolso.",
   },
   {
-    q: "Vocês atendem fora do eixo SP/GO?",
-    a: "Sim. Atendemos em todo o Brasil com suporte técnico remoto e visita presencial para projetos acima de determinado volume.",
+    q: "Quando desenvolvo um produto novo, vou precisar de uma nova tampa?",
+    a: "Com Capflex, você não se preocupa nunca mais em desenvolver tampas para seus produtos. Sempre uma Capflex atenderá sua demanda. Sem cotações, sem desenvolvimento de tampas, sem surpresas — você foca no seu produto, nós na proteção dele. Zero custos de desenvolvimento.",
   },
   {
-    q: "Como funciona a amostra técnica?",
-    a: "Você preenche o formulário abaixo com os dados do seu processo. Nossa equipe seleciona os modelos mais aderentes e envia amostras físicas para teste no seu ambiente. Sem custo, sem compromisso de compra.",
+    q: "Minhas tampas caem no estoque ou em processo. A Capflex resolve?",
+    a: "Sim. A Capflex fica na posição do começo ao fim. No mercado convencional, as tampas saem em até 40% dos casos — ou seja, você pagou para jogar fora. Aqui, a proteção permanece sempre. Solicite amostras e comprove.",
+  },
+  {
+    q: "Meu produto vaza. A Capflex resolve?",
+    a: "Não só veda como resiste a produtos químicos e intempéries. Vamos trabalhar com você para resolver o seu caso — entre em contato pelo formulário abaixo.",
+  },
+  {
+    q: "Preciso de amostras, como faço?",
+    a: "Em qualquer lugar da América do Sul, pode chamar. Preencha o formulário abaixo e vamos conversar — enviamos amostras para você sem custo e sem compromisso.",
+  },
+  {
+    q: "Tenho muitas tampas e muita gente aplicando. O que vai mudar?",
+    a: "Vai diminuir muito o tempo de processo, reduzir falhas de aplicação e, consequentemente, o número de colaboradores envolvidos. Isso significa recurso financeiro de volta no seu bolso.",
   },
 ];
 
@@ -63,7 +75,7 @@ export default function FAQSection() {
                   />
                 </div>
               </button>
-              <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-40" : "max-h-0"}`}>
+              <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-60" : "max-h-0"}`}>
                 <div className="px-6 pb-5 pl-[52px]">
                   <p className="text-[15px] leading-relaxed" style={{ color: "rgba(35,39,80,0.65)" }}>{faq.a}</p>
                 </div>
