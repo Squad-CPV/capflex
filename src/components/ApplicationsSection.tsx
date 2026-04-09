@@ -25,7 +25,7 @@ const cards = [
     number: "03",
     title: "Mascaramento para Pintura e Acabamento",
     text: "Aderência precisa que impede a penetração de tinta em superfícies críticas. Substitui fitas e tampas inadequadas com zero risco de mancha ou retrabalho.",
-    objectPosition: "center 35%",
+    objectPosition: "center 50%",
   },
 ];
 
