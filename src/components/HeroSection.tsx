@@ -4,7 +4,7 @@ import { useInView } from "@/hooks/use-animations";
 const solutionHighlights = [
   {
     title: "Flanges",
-    text: "Proteção flexível para flanges de múltiplos diâmetros com ajuste e vedação precisos.",
+    text: "Proteção flexível para flanges de múltiplos diâmetros com ajuste e tamponamento precisos.",
   },
   {
     title: "Dutos",
