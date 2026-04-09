@@ -50,13 +50,14 @@ export default function ApplicationsSection() {
           A Capflex já opera em processos <span className="text-primary">como o seu.</span>
         </h2>
 
-        {/* Video demo */}
+        {/* Video + explanation side by side */}
         <div
-          className={`mb-16 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+          className={`mb-16 grid md:grid-cols-5 gap-6 items-stretch ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
           style={inView ? { animationDelay: "100ms" } : undefined}
         >
-          <div className="relative max-w-3xl mx-auto overflow-hidden border border-border group">
-            <div className="relative aspect-video">
+          {/* Video */}
+          <div className="md:col-span-3 relative overflow-hidden border border-border">
+            <div className="relative aspect-video h-full">
               <video
                 ref={videoRef}
                 src="/capflex-demo.mp4"
@@ -84,12 +85,32 @@ export default function ApplicationsSection() {
                 </button>
               )}
             </div>
-            <div className="p-4 md:p-5 bg-card">
-              <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-primary mb-1">Demonstração</p>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Veja como a tampa Capflex é aplicada: elasticidade controlada, encaixe firme e tamponamento imediato — sem ferramentas.
-              </p>
-            </div>
+          </div>
+
+          {/* Explanation box */}
+          <div className="md:col-span-2 border border-border bg-card p-6 md:p-8 flex flex-col justify-center">
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4 block">Demonstração</span>
+            <h3 className="text-lg md:text-xl font-extrabold text-foreground leading-snug mb-4">
+              Aplicação manual,<br />sem ferramentas
+            </h3>
+            <ul className="space-y-3 text-[14px] leading-relaxed text-muted-foreground">
+              <li className="flex gap-2.5">
+                <span className="text-primary font-bold text-xs mt-0.5">01</span>
+                <span>A tampa é apresentada já no formato cônico, pronta para uso imediato.</span>
+              </li>
+              <li className="flex gap-2.5">
+                <span className="text-primary font-bold text-xs mt-0.5">02</span>
+                <span>A borracha é esticada para demonstrar a alta elasticidade e resistência do material.</span>
+              </li>
+              <li className="flex gap-2.5">
+                <span className="text-primary font-bold text-xs mt-0.5">03</span>
+                <span>O encaixe é feito manualmente sobre o tubo — pressão firme e tamponamento hermético.</span>
+              </li>
+              <li className="flex gap-2.5">
+                <span className="text-primary font-bold text-xs mt-0.5">04</span>
+                <span>Resultado: proteção total sem folga, pronta para transporte ou linha de produção.</span>
+              </li>
+            </ul>
           </div>
         </div>
 
