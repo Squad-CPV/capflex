@@ -114,12 +114,12 @@ export default function ContactFormSection() {
                 onFocus={(e) => e.currentTarget.style.borderColor = "#92568D"}
                 onBlur={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"}
               >
-                <option value="">Selecione o segmento</option>
-                <option value="montadora">Montadora</option>
-                <option value="agricola">Agrícola</option>
-                <option value="oleo-gas">Óleo e Gás</option>
-                <option value="engenharia-civil">Engenharia Civil</option>
-                <option value="outro">Outro</option>
+              <option value="" style={{ background: "#1a1a3e", color: "#fff" }}>Selecione o segmento</option>
+                <option value="montadora" style={{ background: "#1a1a3e", color: "#fff" }}>Montadora</option>
+                <option value="agricola" style={{ background: "#1a1a3e", color: "#fff" }}>Agrícola</option>
+                <option value="oleo-gas" style={{ background: "#1a1a3e", color: "#fff" }}>Óleo e Gás</option>
+                <option value="engenharia-civil" style={{ background: "#1a1a3e", color: "#fff" }}>Engenharia Civil</option>
+                <option value="outro" style={{ background: "#1a1a3e", color: "#fff" }}>Outro</option>
               </select>
               {errors.segmento && <p className="text-xs text-destructive mt-1">{errors.segmento}</p>}
             </div>
