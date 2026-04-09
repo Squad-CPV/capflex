@@ -12,7 +12,7 @@ const cards = [
     icon: Shield,
     number: "02",
     title: "Resistência em Ambientes Agressivos",
-    text: "Formulação resistente a óleos, solventes, tintas e variações térmicas. Projetada para os ambientes onde tampas plásticas comuns falham.",
+    text: "Formulação resistente a óleos, solventes, tintas e variações térmicas. Projetada para os ambientes onde tampas convencionais falham.",
   },
   {
     icon: Layers,

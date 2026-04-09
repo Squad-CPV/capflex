@@ -2,7 +2,7 @@ import capflexLogo from "@/assets/capflex-logo.png";
 import { Leaf } from "lucide-react";
 
 const footerLinks = [
-  { label: "Problema", href: "#problema" },
+  { label: "Diagnóstico", href: "#problema" },
   { label: "Solução", href: "#solucao" },
   { label: "Aplicações", href: "#aplicacoes" },
   { label: "Segmentos", href: "#segmentos" },
