@@ -7,9 +7,8 @@ const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório").max(100),
   email: z.string().trim().email("E-mail inválido").max(255),
   empresa: z.string().trim().min(1, "Empresa é obrigatória").max(100),
-  cargo: z.string().trim().min(1, "Cargo é obrigatório").max(100),
   segmento: z.string().min(1, "Selecione um segmento"),
-  volume: z.string().min(1, "Selecione o volume"),
+  problema: z.string().trim().min(1, "Descreva brevemente o problema").max(300),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -85,10 +84,9 @@ export default function ContactFormSection() {
             <div className="w-full h-[2px] bg-primary mb-4" />
             
             {([
-              { field: "nome" as const, label: "Nome completo", type: "text", placeholder: "Seu nome completo" },
+              { field: "nome" as const, label: "Nome para Contato", type: "text", placeholder: "Seu nome" },
               { field: "email" as const, label: "E-mail corporativo", type: "email", placeholder: "nome@empresa.com.br" },
               { field: "empresa" as const, label: "Empresa", type: "text", placeholder: "Nome da empresa" },
-              { field: "cargo" as const, label: "Cargo", type: "text", placeholder: "Diretor Industrial, Compras..." },
             ] as const).map((f) => (
               <div key={f.field}>
                 <label className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "rgba(255,255,255,0.50)" }}>{f.label}</label>
@@ -127,21 +125,18 @@ export default function ContactFormSection() {
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "rgba(255,255,255,0.50)" }}>Volume mensal de tampas</label>
-              <select
-                value={form.volume || ""}
-                onChange={(e) => update("volume", e.target.value)}
+              <label className="block text-[10px] font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "rgba(255,255,255,0.50)" }}>Qual o problema?</label>
+              <input
+                type="text"
+                value={form.problema || ""}
+                onChange={(e) => update("problema", e.target.value)}
+                placeholder="Ex: Vazamento, proteção, pintura, transporte..."
                 className="w-full px-4 py-3 text-sm focus:outline-none transition-colors"
-                style={inputStyle}
+                style={{ ...inputStyle, "--tw-placeholder-color": "rgba(255,255,255,0.25)" } as React.CSSProperties}
                 onFocus={(e) => e.currentTarget.style.borderColor = "#92568D"}
                 onBlur={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"}
-              >
-                <option value="">Selecione o volume</option>
-                <option value="abaixo-10k">Abaixo de 10.000</option>
-                <option value="10k-50k">10.000 a 50.000</option>
-                <option value="acima-50k">Acima de 50.000</option>
-              </select>
-              {errors.volume && <p className="text-xs text-destructive mt-1">{errors.volume}</p>}
+              />
+              {errors.problema && <p className="text-xs text-destructive mt-1">{errors.problema}</p>}
             </div>
 
             <button type="submit" className="btn-industrial w-full text-center py-4">
