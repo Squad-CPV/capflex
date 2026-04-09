@@ -1,5 +1,6 @@
 import { useInView } from "@/hooks/use-animations";
 import { Leaf } from "lucide-react";
+import productAbout from "@/assets/capflex-product-about.jpg";
 
 const metrics = [
   { number: "15+", label: "anos de desenvolvimento" },
