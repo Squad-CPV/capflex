@@ -61,7 +61,7 @@ export default function ProblemSection() {
               style={{ background: "#232750", ...(inView ? { animationDelay: "240ms" } : {}) }}
             >
               <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5" style={{ color: "rgba(255,255,255,0.50)" }}>
-                {"// O padrão antigo"}
+                {"// Padrão convencional"}
               </h3>
               <ul className="space-y-3">
                 {legacyProblems.map((item) => (
