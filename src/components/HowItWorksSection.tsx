@@ -28,7 +28,7 @@ export default function HowItWorksSection() {
   return (
     <section id="solucao" className="py-24 md:py-32 section-white overflow-hidden">
       <div ref={ref} className={`container relative transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-        <div className="section-label">Tecnologia</div>
+        <div className="section-label">Solução</div>
 
         <h2 className={`text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 leading-[1.05] max-w-3xl ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}>
           Uma tampa. Múltiplos diâmetros.
