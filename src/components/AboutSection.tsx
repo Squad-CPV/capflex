@@ -1,5 +1,6 @@
 import { useInView } from "@/hooks/use-animations";
 import { Leaf } from "lucide-react";
+import productAbout from "@/assets/capflex-product-about.jpg";
 
 const metrics = [
   { number: "15+", label: "anos de desenvolvimento" },
@@ -22,6 +23,9 @@ export default function AboutSection() {
               15 anos desenvolvendo o que a indústria precisava e
               <span className="text-primary"> ainda não tinha.</span>
             </h2>
+            <div className="overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
+              <img src={productAbout} alt="Produto Capflex aplicado em turbina industrial" className="w-full h-auto object-cover" />
+            </div>
           </div>
 
           <div className="space-y-6">
