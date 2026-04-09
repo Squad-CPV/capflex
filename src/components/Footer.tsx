@@ -21,7 +21,7 @@ export default function Footer() {
               <img src={capflexLogo} alt="Logo Capflex" className="h-12 md:h-24 w-auto max-w-[220px] object-contain brightness-0 invert" />
             </div>
             <p className="text-xs max-w-xs leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>
-              Engenharia de proteção para processos que não aceitam falha.
+              Engenharia de proteção que traz confiabilidade ao seu processo.
             </p>
             <div className="flex items-center gap-2">
               <Leaf size={10} className="text-primary shrink-0" />
