@@ -1,4 +1,6 @@
 import { useInView } from "@/hooks/use-animations";
+import { useRef, useState } from "react";
+import { Play } from "lucide-react";
 import appManufacturing from "@/assets/capflex-application-manufacturing.jpg";
 import appTransport from "@/assets/capflex-application-transport.jpeg";
 import appFinish from "@/assets/capflex-application-finish.jpg";
@@ -29,6 +31,15 @@ const cards = [
 
 export default function ApplicationsSection() {
   const { ref, inView } = useInView();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   return (
     <section id="aplicacoes" className="py-24 md:py-32 section-light overflow-hidden relative">
@@ -39,12 +50,55 @@ export default function ApplicationsSection() {
           A Capflex já opera em processos <span className="text-primary">como o seu.</span>
         </h2>
 
+        {/* Video demo */}
+        <div
+          className={`mb-16 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
+          style={inView ? { animationDelay: "100ms" } : undefined}
+        >
+          <div className="relative max-w-3xl mx-auto overflow-hidden border border-border group">
+            <div className="relative aspect-video">
+              <video
+                ref={videoRef}
+                src="/capflex-demo.mp4"
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onClick={() => {
+                  if (videoRef.current?.paused) handlePlay();
+                  else { videoRef.current?.pause(); setIsPlaying(false); }
+                }}
+              />
+              {!isPlaying && (
+                <button
+                  onClick={handlePlay}
+                  className="absolute inset-0 flex items-center justify-center bg-foreground/30 transition-colors hover:bg-foreground/40 cursor-pointer"
+                  aria-label="Reproduzir vídeo de demonstração"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary flex items-center justify-center shadow-lg transition-transform hover:scale-110">
+                    <Play className="w-7 h-7 md:w-9 md:h-9 text-primary-foreground ml-1" />
+                  </div>
+                </button>
+              )}
+            </div>
+            <div className="p-4 md:p-5 bg-card">
+              <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-primary mb-1">Demonstração</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Veja como a tampa Capflex é aplicada: elasticidade controlada, encaixe firme e tamponamento imediato — sem ferramentas.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-6">
           {cards.map((c, i) => (
             <div
               key={c.title}
               className={`group ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
-              style={inView ? { animationDelay: `${140 + i * 140}ms` } : undefined}
+              style={inView ? { animationDelay: `${240 + i * 140}ms` } : undefined}
             >
               <div className="relative overflow-hidden aspect-[4/3] mb-6 border border-border transition-all duration-300 group-hover:-translate-y-2 group-hover:border-primary/40">
                 <img
@@ -72,7 +126,7 @@ export default function ApplicationsSection() {
           ))}
         </div>
 
-        <div className={`mt-16 text-center ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "620ms" } : undefined}>
+        <div className={`mt-16 text-center ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={inView ? { animationDelay: "720ms" } : undefined}>
           <a href="#formulario" className="btn-industrial-outline hover-scale">
             Quero validar a Capflex no meu processo →
           </a>
