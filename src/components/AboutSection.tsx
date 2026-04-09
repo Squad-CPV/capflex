@@ -23,7 +23,7 @@ export default function AboutSection() {
               15 anos desenvolvendo o que a indústria precisava e
               <span className="text-primary"> ainda não tinha.</span>
             </h2>
-            <div className="overflow-hidden img-vignette" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
+            <div className="overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
               <img src={productAbout} alt="Produto Capflex aplicado em turbina industrial" className="w-full h-auto object-cover" />
             </div>
           </div>
