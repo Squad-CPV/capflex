@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import capflexLogo from "@/assets/capflex-logo.png";
 
 const navLinks = [
-  { label: "Problema", href: "#problema" },
+  { label: "Diagnóstico", href: "#problema" },
   { label: "Solução", href: "#solucao" },
   { label: "Aplicações", href: "#aplicacoes" },
   { label: "Segmentos", href: "#segmentos" },

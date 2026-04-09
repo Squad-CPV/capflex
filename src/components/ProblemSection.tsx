@@ -2,7 +2,7 @@ import { useInView } from "@/hooks/use-animations";
 import { X, Check } from "lucide-react";
 
 const legacyProblems = [
-  "60+ modelos de tampas plásticas rígidas",
+  "60+ modelos de tampas convencionais rígidas",
   "Uma tampa por diâmetro, por processo",
   "Estoque fragmentado, risco constante de falta",
   "Falhas de tamponamento em ambientes agressivos",
@@ -29,7 +29,7 @@ export default function ProblemSection() {
           <div className="space-y-8">
             <div className={inView ? "animate-fade-up" : "opacity-0 translate-y-8"}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-8 leading-[1.05] max-w-2xl">
-                O custo invisível das tampas plásticas na sua
+                O custo invisível das tampas convencionais na sua
                 <span className="text-primary"> linha de produção.</span>
               </h2>
 
