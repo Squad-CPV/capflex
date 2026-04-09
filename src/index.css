@@ -182,6 +182,44 @@
       repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 60px),
       repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 60px);
   }
+  /* ── Transição entre dobras ── */
+  .section-dark,
+  .section-light,
+  .section-white {
+    position: relative;
+  }
+
+  /* Degradê de saída (bottom fade) para seções escuras */
+  .section-dark + .section-light::before,
+  .section-dark + .section-white::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full pointer-events-none;
+    height: 120px;
+    background: linear-gradient(to bottom, hsl(235 39% 23%), transparent);
+    z-index: 1;
+  }
+
+  /* Degradê de entrada para seções escuras vindas de claras */
+  .section-light + .section-dark::before,
+  .section-white + .section-dark::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full pointer-events-none;
+    height: 120px;
+    background: linear-gradient(to bottom, hsl(231 20% 92%), transparent);
+    z-index: 1;
+  }
+
+  /* Efeito vinheta suave nas imagens de produto */
+  .img-vignette {
+    position: relative;
+    overflow: hidden;
+  }
+  .img-vignette::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    box-shadow: inset 0 0 60px 20px rgba(35,39,80,0.35);
+    z-index: 1;
+  }
 }
 
 @layer utilities {

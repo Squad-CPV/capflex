@@ -121,7 +121,7 @@ export default function ApplicationsSection() {
               className={`group ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
               style={inView ? { animationDelay: `${240 + i * 140}ms` } : undefined}
             >
-              <div className="relative overflow-hidden aspect-[4/3] mb-6 border border-border transition-all duration-300 group-hover:-translate-y-2 group-hover:border-primary/40">
+              <div className="relative overflow-hidden aspect-[4/3] mb-6 border border-border transition-all duration-300 group-hover:-translate-y-2 group-hover:border-primary/40 img-vignette">
                 <img
                   src={c.img}
                   alt={c.title}
