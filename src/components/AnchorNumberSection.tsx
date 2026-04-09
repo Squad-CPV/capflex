@@ -10,7 +10,7 @@ const savingsPoints = [
 ];
 
 export default function AnchorNumberSection() {
-  const { count, ref: countRef } = useCountUp(1000000, 2500);
+  const { count, ref: countRef } = useCountUp(5800000, 2500);
   const { ref, inView } = useInView();
 
   return (
@@ -26,18 +26,18 @@ export default function AnchorNumberSection() {
               className={`border border-border bg-card p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}
             >
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                Economia anual estimada
+                Economia acumulada em clientes industriais
               </p>
               <p className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none mb-2">
                 <span className="text-primary">R$ </span>
-                <span className="text-foreground">{count.toLocaleString("pt-BR")}</span>
+                <span className="text-foreground">{(count / 1000000).toFixed(1).replace(".", ",")} mi</span>
               </p>
               <p className="text-lg text-foreground font-semibold mb-2">
-                em economia anual de estoque e processo.
+                economia gerada em clientes que substituíram 60+ modelos por Capflex.
               </p>
               <div className="w-16 h-[2px] bg-primary my-6" />
-              <p className="text-[15px] leading-relaxed max-w-md" style={{ color: "rgba(35,39,80,0.72)" }}>
-                Esse é o impacto médio estimado quando indústrias de médio e grande porte substituem 60+ modelos de tampas por 5 modelos Capflex.
+              <p className="text-[13px] leading-relaxed max-w-md" style={{ color: "rgba(35,39,80,0.55)" }}>
+                *Impacto médio estimado em clientes de médio e grande porte.
               </p>
             </div>
           </div>
