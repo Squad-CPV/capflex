@@ -47,7 +47,7 @@ export default function FAQSection() {
         <div className="section-label">FAQ</div>
 
         <h2 className={`text-3xl md:text-4xl font-extrabold text-foreground mb-12 leading-[1.05] max-w-3xl ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`}>
-          Perguntas que todo diretor faz antes de <span className="text-primary">mudar de fornecedor.</span>
+          Perguntas que engenharia e compras fazem antes de <span className="text-primary">trocar de fornecedor.</span>
         </h2>
 
         <div className="bg-card" style={{ border: "1px solid rgba(35,39,80,0.08)" }}>
