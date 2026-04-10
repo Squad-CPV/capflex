@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 
 const savingsPoints = [
   "Redução de SKUs e custo de gestão de estoque",
-  "Eliminação de compras emergenciais por ruptura",
+  "Eliminação de compras emergenciais por furos de estoque",
   "Fim do retrabalho por falha de proteção",
-  "Menos descarte por incompatibilidade de modelo",
+  "Menos perdas de tampa durante armazenamento/transporte",
   "Menor tempo de parada por tampa errada na linha",
 ];
 

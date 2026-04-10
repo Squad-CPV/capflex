@@ -32,7 +32,7 @@ export default function AboutSection() {
             <div className={`p-7 transition-all duration-300 hover:-translate-y-1 ${inView ? "animate-fade-up" : "opacity-0 translate-y-8"}`} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)", ...(inView ? { animationDelay: "160ms" } : {}) }}>
               <div className="text-sm leading-[1.65] space-y-4" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <p>
-                  A Capflex não surgiu de um catálogo. Surgiu de um problema real: tampas ocupam espaço, caem durante o processo, e cada diâmetro ou formato gera a necessidade de um novo tipo para poder atender. A indústria precisa focar no produto e de proteção adequada sem perder tempo com isso.
+                  A Capflex não surgiu de um catálogo. Surgiu de um problema real: tampas ocupam espaço, caem durante o processo, e cada diâmetro ou formato gera a necessidade de um novo tipo para poder atender. A indústria precisa focar no produto e garantir sua proteção adequada sem perder tempo com isso.
                 </p>
                 <p>
                   A solução veio há 15 anos, quando resolvemos estudar o assunto aplicando técnicas de Lean Manufacturing e Engenharia de Polímeros. Chegamos na solução: um produto que se molda em qualquer formato e tamanho, e que não se solta por questões de vibração, transporte ou intempéries.

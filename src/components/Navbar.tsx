@@ -3,11 +3,13 @@ import { Menu, X } from "lucide-react";
 import capflexLogo from "@/assets/capflex-logo.png";
 
 const navLinks = [
+  { label: "Home", href: "#" },
   { label: "Diagnóstico", href: "#problema" },
   { label: "Solução", href: "#solucao" },
   { label: "Aplicações", href: "#aplicacoes" },
   { label: "Segmentos", href: "#segmentos" },
   { label: "Sobre", href: "#sobre" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -17,7 +19,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b" style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(12px)", borderColor: "rgba(35,39,80,0.08)" }}>
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center gap-3 shrink-0">
-          <img src={capflexLogo} alt="Logo Capflex" className="h-8 sm:h-10 md:h-12 w-auto max-w-[160px] object-contain" />
+          <img src={capflexLogo} alt="Logo Capflex" className="h-10 sm:h-12 md:h-14 w-auto max-w-[200px] object-contain" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
