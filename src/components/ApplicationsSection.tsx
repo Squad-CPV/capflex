@@ -64,26 +64,10 @@ export default function ApplicationsSection() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                autoPlay
+                preload="auto"
                 className="w-full h-full object-cover"
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onClick={() => {
-                  if (videoRef.current?.paused) handlePlay();
-                  else { videoRef.current?.pause(); setIsPlaying(false); }
-                }}
               />
-              {!isPlaying && (
-                <button
-                  onClick={handlePlay}
-                  className="absolute inset-0 flex items-center justify-center bg-foreground/30 transition-colors hover:bg-foreground/40 cursor-pointer"
-                  aria-label="Reproduzir vídeo de demonstração"
-                >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary flex items-center justify-center shadow-lg transition-transform hover:scale-110">
-                    <Play className="w-7 h-7 md:w-9 md:h-9 text-primary-foreground ml-1" />
-                  </div>
-                </button>
-              )}
             </div>
           </div>
 
@@ -91,12 +75,12 @@ export default function ApplicationsSection() {
           <div className="md:col-span-2 border border-border bg-card p-6 md:p-8 flex flex-col justify-center">
             <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4 block">Demonstração</span>
             <h3 className="text-lg md:text-xl font-extrabold text-foreground leading-snug mb-4">
-              Aplicação manual,<br />sem ferramentas
+              Aplicação rápida, extração fácil,<br />proteção total do começo ao fim
             </h3>
             <ul className="space-y-3 text-[14px] leading-relaxed text-muted-foreground">
               <li className="flex gap-2.5">
                 <span className="text-primary font-bold text-xs mt-0.5">01</span>
-                <span>A tampa é apresentada já no formato cônico, pronta para uso imediato.</span>
+                <span>A tampa absorve qualquer formato, pronta para uso imediato.</span>
               </li>
               <li className="flex gap-2.5">
                 <span className="text-primary font-bold text-xs mt-0.5">02</span>

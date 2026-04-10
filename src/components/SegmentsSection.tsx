@@ -5,7 +5,7 @@ const segments = [
   {
     icon: Tractor,
     number: "01",
-    title: "Máquinas Agrícolas e Colheitadeiras",
+    title: "Implementos Agrícolas e Colheitadeiras",
     text: "Protege sistemas hidráulicos e conexões críticas em ambientes de alta exposição a poeira, umidade e agroquímicos.",
   },
   {
@@ -17,8 +17,8 @@ const segments = [
   {
     icon: Droplets,
     number: "03",
-    title: "Óleo e Gás / Tubulações Subaquáticas",
-    text: "Resistência a pressão, salinidade e hidrocarbonetos. Aprovada para ambientes classificados.",
+    title: "Óleo e Gás / Tubulações Industriais",
+    text: "Tampas de alta aderência para tubulações, que auxiliam na proteção e liberação de conclusão de obras.",
   },
   {
     icon: Factory,

@@ -17,7 +17,7 @@ const results = [
   {
     icon: Leaf,
     number: "03",
-    title: "Produção Sustentável",
+    title: "Produto Sustentável",
     text: "Menor volume de tampas descartadas por incompatibilidade. Processo PMF com menor geração de resíduos plásticos por unidade produzida.",
   },
 ];
