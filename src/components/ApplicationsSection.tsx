@@ -1,6 +1,5 @@
 import { useInView } from "@/hooks/use-animations";
-import { useRef, useState } from "react";
-import { Play } from "lucide-react";
+import { useRef } from "react";
 import appManufacturing from "@/assets/capflex-application-manufacturing.jpg";
 import appTransport from "@/assets/capflex-application-transport.jpeg";
 import appFinish from "@/assets/capflex-application-finish.jpg";
@@ -32,14 +31,6 @@ const cards = [
 export default function ApplicationsSection() {
   const { ref, inView } = useInView();
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
 
   return (
     <section id="aplicacoes" className="py-24 md:py-32 section-light overflow-hidden relative">
