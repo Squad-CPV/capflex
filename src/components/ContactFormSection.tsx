@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useInView } from "@/hooks/use-animations";
 import { z } from "zod";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório").max(100),
@@ -17,8 +18,9 @@ export default function ContactFormSection() {
   const { ref, inView } = useInView();
   const [form, setForm] = useState<Partial<FormData>>({});
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = formSchema.safeParse(form);
     if (!result.success) {
@@ -31,8 +33,23 @@ export default function ContactFormSection() {
       return;
     }
     setErrors({});
-    toast.success("Solicitação enviada com sucesso! Nossa equipe entrará em contato em até 1 dia útil.");
-    setForm({});
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        nome: result.data.nome,
+        email: result.data.email,
+        empresa: result.data.empresa,
+        segmento: result.data.segmento,
+        problema: result.data.problema,
+      });
+      if (error) throw error;
+      toast.success("Solicitação enviada com sucesso! Nossa equipe entrará em contato em até 1 dia útil.");
+      setForm({});
+    } catch {
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const update = (field: keyof FormData, value: string) => {
@@ -139,8 +156,8 @@ export default function ContactFormSection() {
               {errors.problema && <p className="text-xs text-destructive mt-1">{errors.problema}</p>}
             </div>
 
-            <button type="submit" className="btn-industrial w-full text-center py-4">
-              Solicitar Amostra Técnica Gratuita →
+            <button type="submit" disabled={submitting} className="btn-industrial w-full text-center py-4 disabled:opacity-50">
+              {submitting ? "Enviando..." : "Solicitar Amostra Técnica Gratuita →"}
             </button>
 
             <p className="text-center text-[10px] uppercase tracking-[0.1em]" style={{ color: "rgba(255,255,255,0.30)" }}>
