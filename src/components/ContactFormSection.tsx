@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório").max(100),
   email: z.string().trim().email("E-mail inválido").max(255),
+  telefone: z.string().trim().min(1, "Telefone é obrigatório").max(20),
   empresa: z.string().trim().min(1, "Empresa é obrigatória").max(100),
   segmento: z.string().min(1, "Selecione um segmento"),
   problema: z.string().trim().min(1, "Descreva brevemente o problema").max(300),
