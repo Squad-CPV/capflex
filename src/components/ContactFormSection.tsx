@@ -49,6 +49,14 @@ export default function ContactFormSection() {
       // Fire webhook (non-blocking)
       supabase.functions.invoke("contact-webhook", { body: payload }).catch(console.error);
       toast.success("Solicitação enviada com sucesso! Nossa equipe entrará em contato em até 1 dia útil.");
+      // Google Ads conversion
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "conversion", {
+          send_to: "AW-17992207030/YPBCCKjAy5scELaVrYND",
+          value: 1.0,
+          currency: "BRL",
+        });
+      }
       setForm({});
     } catch {
       toast.error("Erro ao enviar. Tente novamente.");
