@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório").max(100),
   email: z.string().trim().email("E-mail inválido").max(255),
+  telefone: z.string().trim().min(1, "Telefone é obrigatório").max(20),
   empresa: z.string().trim().min(1, "Empresa é obrigatória").max(100),
   segmento: z.string().min(1, "Selecione um segmento"),
   problema: z.string().trim().min(1, "Descreva brevemente o problema").max(300),
@@ -38,6 +39,7 @@ export default function ContactFormSection() {
       const payload = {
         nome: result.data.nome,
         email: result.data.email,
+        telefone: result.data.telefone,
         empresa: result.data.empresa,
         segmento: result.data.segmento,
         problema: result.data.problema,
@@ -106,6 +108,7 @@ export default function ContactFormSection() {
             {([
               { field: "nome" as const, label: "Nome para Contato", type: "text", placeholder: "Seu nome" },
               { field: "email" as const, label: "E-mail corporativo", type: "email", placeholder: "nome@empresa.com.br" },
+              { field: "telefone" as const, label: "Telefone / WhatsApp", type: "tel", placeholder: "(00) 00000-0000" },
               { field: "empresa" as const, label: "Empresa", type: "text", placeholder: "Nome da empresa" },
             ] as const).map((f) => (
               <div key={f.field}>
