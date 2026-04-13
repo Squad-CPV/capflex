@@ -108,6 +108,7 @@ export default function ContactFormSection() {
             {([
               { field: "nome" as const, label: "Nome para Contato", type: "text", placeholder: "Seu nome" },
               { field: "email" as const, label: "E-mail corporativo", type: "email", placeholder: "nome@empresa.com.br" },
+              { field: "telefone" as const, label: "Telefone / WhatsApp", type: "tel", placeholder: "(00) 00000-0000" },
               { field: "empresa" as const, label: "Empresa", type: "text", placeholder: "Nome da empresa" },
             ] as const).map((f) => (
               <div key={f.field}>
