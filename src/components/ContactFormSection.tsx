@@ -35,14 +35,17 @@ export default function ContactFormSection() {
     setErrors({});
     setSubmitting(true);
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
+      const payload = {
         nome: result.data.nome,
         email: result.data.email,
         empresa: result.data.empresa,
         segmento: result.data.segmento,
         problema: result.data.problema,
-      });
+      };
+      const { error } = await supabase.from("contact_submissions").insert(payload);
       if (error) throw error;
+      // Fire webhook (non-blocking)
+      supabase.functions.invoke("contact-webhook", { body: payload }).catch(console.error);
       toast.success("Solicitação enviada com sucesso! Nossa equipe entrará em contato em até 1 dia útil.");
       setForm({});
     } catch {
