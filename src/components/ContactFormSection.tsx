@@ -156,8 +156,8 @@ export default function ContactFormSection() {
               {errors.problema && <p className="text-xs text-destructive mt-1">{errors.problema}</p>}
             </div>
 
-            <button type="submit" className="btn-industrial w-full text-center py-4">
-              Solicitar Amostra Técnica Gratuita →
+            <button type="submit" disabled={submitting} className="btn-industrial w-full text-center py-4 disabled:opacity-50">
+              {submitting ? "Enviando..." : "Solicitar Amostra Técnica Gratuita →"}
             </button>
 
             <p className="text-center text-[10px] uppercase tracking-[0.1em]" style={{ color: "rgba(255,255,255,0.30)" }}>
