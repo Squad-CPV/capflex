@@ -39,6 +39,7 @@ export default function ContactFormSection() {
       const payload = {
         nome: result.data.nome,
         email: result.data.email,
+        telefone: result.data.telefone,
         empresa: result.data.empresa,
         segmento: result.data.segmento,
         problema: result.data.problema,
