@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useInView } from "@/hooks/use-animations";
 import { z } from "zod";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório").max(100),
